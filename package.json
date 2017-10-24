@@ -1,0 +1,23 @@
+{
+  "name": "pension_pms_pc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joosung21/pension_pms_pc_renew.git"
+  },
+  "author": "Jay Ahn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joosung21/pension_pms_pc_renew/issues"
+  },
+  "homepage": "https://github.com/joosung21/pension_pms_pc_renew#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "pug": "^2.0.0-rc.4"
+  }
+}
