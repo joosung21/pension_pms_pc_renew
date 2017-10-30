@@ -7,6 +7,9 @@ app.set('view engine', 'pug')
 app.use('/', express.static('public'))
 app.use('/assets/', express.static('assets'))
 
+// 기본라우팅
+app.get('/', function (req, res){res.render('reservations')})
+
 // 예약목록
 app.get('/reservations', function (req, res){res.render('reservations')})
 
