@@ -1,0 +1,68 @@
+include ../includes/header.pug
+.row.no-gutters
+  include ../includes/leftside.pug
+
+  #content.col-md-8.col-lg-9.col-xl-10
+    .row.no-gutters
+      .col-md-12.col-xl-10
+        h1 객실관리
+        .lead.mb-5 객실 기본정보를 수정하거나 위아래로 드래그하여 순서를 변경할 수 있습니다.
+        table.table.table-hover.table-vertical-middle.table-reorderable
+          thead
+            tr
+              th(scope='col') 순서
+              th(scope='col') 객실명
+              th(scope='col') 형태
+              th(scope='col') 객실수
+              th(scope='col') 기준/최대인원
+              th(scope='col') 상태
+              th
+          tbody
+            tr
+              th 01
+              td 스테이튼 아일랜드
+              td 독채+복층
+              td 1
+              td 4/8 명
+              td 판매대기
+              td
+                button.btn.btn-secondary.btn-sm(type='button', onclick='location.href="/setting/rooms/edit"') 수정
+            tr
+              th 02                
+              td 맨하탄
+              td 독채+복층
+              td 3
+              td 4/8 명
+              td 판매중
+              td
+                button.btn.btn-secondary.btn-sm(type='button', onclick='location.href="/setting/rooms/edit"') 수정
+            tr
+              th 03               
+              td 아스토리아
+              td 원룸형
+              td 1
+              td 2/4 명
+              td 판매중
+              td                
+                button.btn.btn-secondary.btn-sm(type='button', onclick='location.href="/setting/rooms/edit"') 수정
+            tr
+              th 04              
+              td 부르클린
+              td 원룸형
+              td 1
+              td 2/4 명
+              td 판매중
+              td
+                button.btn.btn-secondary.btn-sm(type='button', onclick='location.href="/setting/rooms/edit"') 수정                  
+            tr
+              th 05                
+              td 브롱스
+              td 원룸형
+              td 1
+              td 2/4 명
+              td 판매중
+              td
+                button.btn.btn-secondary.btn-sm(type='button', onclick='location.href="/setting/rooms/edit"') 수정
+        
+        button.btn.btn-primary.vertical-middle(type='button', onclick='location.href="/setting/rooms/create"')          
+          span 새로운 객실추가

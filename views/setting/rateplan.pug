@@ -1,0 +1,470 @@
+include ../includes/header.pug
+.row.no-gutters
+  include ../includes/leftside.pug
+
+  #content.col-md-8.col-lg-9.col-xl-10
+    .row.no-gutters
+      .col-md-12.col-xl-10
+        h1 기본요금
+        .lead.mb-5 시즌별 기간과 객실별 요금을 설정할 수 있습니다.
+        
+        //- 비수기
+        .card.mb-5
+          .card-body
+            h3 비수기
+            p 기간이 설정되지 않은 모든날에 기본으로 적용되는 숙소의 기준요금 입니다.
+            .text-right
+              button.btn.btn-primary(type='button', data-toggle='collapse', data-target='#collapse1')
+                span 비수기 요금표
+                i.fa.fa-angle-down.ml-2
+
+            //- 비수기 요금표
+            #collapse1.collapse
+              table.table.mt-4.vertical-middle
+                thead
+                  tr
+                    th(scope='col', style='width: 30%') 객실
+                    th(scope='col') 주중
+                    th(scope='col') 금요일
+                    th(scope='col') 
+                      | 토요일
+                      small.text-muted  공휴일 전날
+                tbody
+                  tr
+                    th.align-middle(scope='row') 
+                      | 스테이튼 아일랜드
+                      small.text-muted.ml-2 4인실
+                    td
+                      .input-group
+                        input.form-control(type='text', value='120,000')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='140,000')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='140,000')
+                        span.input-group-addon 원
+                  tr
+                    th.align-middle(scope='row')
+                      | 맨하탄
+                      small.text-muted.ml-2 4인실
+                    td
+                      .input-group
+                        input.form-control(type='text', value='140,000')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='180,000')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='180,000')
+                        span.input-group-addon 원
+                  tr
+                    th.align-middle(scope='row') 
+                      | 아스토리아
+                      small.text-muted.ml-2 2인실
+                    td
+                      .input-group
+                        input.form-control(type='text', value='100,000')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='120,000')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='120,000')
+                        span.input-group-addon 원
+                  tr
+                    th.align-middle(scope='row') 
+                      | 부르클린
+                      small.text-muted.ml-2 2인실
+                    td
+                      .input-group
+                        input.form-control(type='text', value='240,000')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='260,000')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='260,000')
+                        span.input-group-addon 원
+
+        //- 성수기
+        .card.mb-5
+          .card-body
+            h3 성수기
+
+            //- 기간
+            .form-row.py-2
+              .col
+                .input-group
+                  span.input-group-addon 시작일
+                  input.form-control(type='date', value='2017-07-15', disabled)
+              .col
+                .input-group
+                  span.input-group-addon 종료일
+                  input.form-control(type='date', value='2017-08-15', disabled)
+              .col
+                .btn-group(role='group')
+                  button.btn.btn-secondary(type='button') 기간수정                  
+
+            //- 기간               
+            .form-row.py-2
+              .col
+                .input-group
+                  span.input-group-addon 시작일
+                  input.form-control(type='date', value='2017-12-24', disabled)
+              .col
+                .input-group
+                  span.input-group-addon 종료일
+                  input.form-control(type='date', value='2017-12-31', disabled)
+              .col
+                .btn-group(role='group')
+                  button.btn.btn-secondary(type='button') 기간수정                    
+                  button.btn.btn-secondary(type='button')
+                    i.fa.fa-trash.fa-lg
+            //- 기간추가
+            .form-row.py-2
+              .col
+                .input-group
+                  span.input-group-addon 시작일
+                  input.form-control(type='date', value='')
+              .col
+                .input-group
+                  span.input-group-addon 종료일
+                  input.form-control(type='date', value='')
+              .col
+                .btn-group(role='group')
+                  button.btn.btn-success(type='button') 저장
+                  button.btn.btn-secondary(type='button') 취소
+            button.btn.btn-secondary(type='button') + 기간추가
+
+            .text-right
+              button.btn.btn-primary(type='button', data-toggle='collapse', data-target='#collapse2')
+                span 성수기 요금표
+                i.fa.fa-angle-down.ml-2
+            
+            //- 성수기 요금표
+            #collapse2.collapse
+              table.table.mt-4.vertical-middle
+                thead
+                  tr
+                    th(scope='col', style='width: 30%') 객실
+                    th(scope='col') 주중
+                    th(scope='col') 금요일
+                    th(scope='col') 
+                      | 토요일
+                      small.text-muted  공휴일 전날
+                tbody
+                  tr
+                    th.align-middle(scope='row') 
+                      | 스테이튼 아일랜드
+                      small.text-muted.ml-2 4인실
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                  tr
+                    th.align-middle(scope='row')
+                      | 맨하탄
+                      small.text-muted.ml-2 4인실
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                  tr
+                    th.align-middle(scope='row') 
+                      | 아스토리아
+                      small.text-muted.ml-2 2인실
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                  tr
+                    th.align-middle(scope='row') 
+                      | 부르클린
+                      small.text-muted.ml-2 2인실
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+
+              .text-right
+                .dropdown
+                  button#dropdownMenuButton1.btn.btn-secondary.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                    | 다른 시즌요금 불러오기
+                  .dropdown-menu(aria-labelledby='dropdownMenuButton1')
+                    a.dropdown-item(href='#') 비수기
+                    a.dropdown-item(href='#') 성수기
+                    a.dropdown-item(href='#') 준성수기
+                    a.dropdown-item(href='#') 추석황금연휴
+
+        //- 준성수기
+        .card.mb-5
+          .card-body
+            h3 준성수기
+
+            //- 기간추가
+            .form-row.py-2
+              .col
+                .input-group
+                  span.input-group-addon 시작일
+                  input.form-control(type='date', value='')
+              .col
+                .input-group
+                  span.input-group-addon 종료일
+                  input.form-control(type='date', value='')
+              .col
+                .btn-group(role='group')
+                  button.btn.btn-success(type='button') 저장
+            button.btn.btn-secondary(type='button') + 기간추가                             
+
+            .text-right
+              button.btn.btn-primary(type='button', data-toggle='collapse', data-target='#collapse3')
+                span 준성수기 요금표
+                i.fa.fa-angle-down.ml-2
+            
+            //- 준성수기 요금표
+            #collapse3.collapse
+              table.table.mt-4.vertical-middle
+                thead
+                  tr
+                    th(scope='col', style='width: 30%') 객실
+                    th(scope='col') 주중
+                    th(scope='col') 금요일
+                    th(scope='col') 
+                      | 토요일
+                      small.text-muted  공휴일 전날
+                tbody
+                  tr
+                    th.align-middle(scope='row') 
+                      | 스테이튼 아일랜드
+                      small.text-muted.ml-2 4인실
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                  tr
+                    th.align-middle(scope='row')
+                      | 맨하탄
+                      small.text-muted.ml-2 4인실
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                  tr
+                    th.align-middle(scope='row') 
+                      | 아스토리아
+                      small.text-muted.ml-2 2인실
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                  tr
+                    th.align-middle(scope='row') 
+                      | 부르클린
+                      small.text-muted.ml-2 2인실
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+
+              .text-right
+                .dropdown
+                  button#dropdownMenuButton2.btn.btn-secondary.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                    | 다른 시즌요금 불러오기
+                  .dropdown-menu(aria-labelledby='dropdownMenuButton2')
+                    a.dropdown-item(href='#') 비수기
+                    a.dropdown-item(href='#') 성수기
+                    a.dropdown-item(href='#') 준성수기
+                    a.dropdown-item(href='#') 추석황금연휴
+
+        //- 추가된 시즌
+        .card.mb-5
+          .card-body
+            .form-group
+              label 추가된 시즌
+              input.form-control.form-control-lg(type='text', value='', placeholder='시즌명을 입력하세요.')              
+
+            //- 기간추가
+            .form-row.py-2
+              .col
+                .input-group
+                  span.input-group-addon 시작일
+                  input.form-control(type='date', value='')
+              .col
+                .input-group
+                  span.input-group-addon 종료일
+                  input.form-control(type='date', value='')
+              .col
+            button.btn.btn-secondary(type='button') + 기간추가                
+
+            .text-right
+              button.btn.btn-primary(type='button', data-toggle='collapse', data-target='#collapse4')
+                span 요금표
+                i.fa.fa-angle-down.ml-2
+            
+            //- 요금표
+            #collapse4.collapse
+              table.table.mt-4.vertical-middle
+                thead
+                  tr
+                    th(scope='col', style='width: 30%') 객실
+                    th(scope='col') 주중
+                    th(scope='col') 금요일
+                    th(scope='col') 
+                      | 토요일
+                      small.text-muted  공휴일 전날
+                tbody
+                  tr
+                    th.align-middle(scope='row') 
+                      | 스테이튼 아일랜드
+                      small.text-muted.ml-2 4인실
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                  tr
+                    th.align-middle(scope='row')
+                      | 맨하탄
+                      small.text-muted.ml-2 4인실
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                  tr
+                    th.align-middle(scope='row') 
+                      | 아스토리아
+                      small.text-muted.ml-2 2인실
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                  tr
+                    th.align-middle(scope='row') 
+                      | 부르클린
+                      small.text-muted.ml-2 2인실
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+                    td
+                      .input-group
+                        input.form-control(type='text', value='')
+                        span.input-group-addon 원
+
+              .text-right
+                .dropdown
+                  button#dropdownMenuButton3.btn.btn-secondary.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                    | 다른 시즌요금 불러오기
+                  .dropdown-menu(aria-labelledby='dropdownMenuButton3')
+                    a.dropdown-item(href='#') 비수기
+                    a.dropdown-item(href='#') 성수기
+                    a.dropdown-item(href='#') 준성수기
+                    a.dropdown-item(href='#') 추석황금연휴
+
+        .py-4
+        hr.py-2
+        .row
+          .col-4
+            button.btn.btn-secondary.btn-lg.btn-block(type='button') 취소
+          .col-8
+            button.btn.btn-primary.btn-lg.btn-block(type='button') 객실요금 일괄저장

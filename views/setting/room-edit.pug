@@ -1,0 +1,100 @@
+include ../includes/header.pug
+.row.no-gutters
+  include ../includes/leftside.pug
+
+  #content.col-md-8.col-lg-9.col-xl-10
+    .row.no-gutters
+      .col-md-10.col-xl-8
+        .row
+          .col-md-10
+            h1 스테이튼 아일랜드
+            .lead.mb-5 객실 기본정보를 변경합니다.
+          .col-md-2.text-right
+            button.btn.btn-secondary(type='button')
+              i.fa.fa-trash.fa-lg.mr-1
+              span 객실삭제
+        
+        .btn-group(role='group')
+          button.btn.btn-success(type='button') 실시간판매 ON
+          button.btn.btn-light(type='button', data-toggle='tooltip', data-placement='bottom', title='실시간 판매를 중지합니다') OFF
+        
+        //- If switch is off
+        //- .btn-group(role='group')
+        //-   button.btn.btn-light(type='button', data-toggle='tooltip', data-placement='bottom', title='실시간 판매를 시작합니다') 판매 ON
+        //-   button.btn.btn-secondary(type='button') OFF
+        
+        .py-4
+
+        .row
+          .form-group.col-md-6
+            label 객실명
+            input.form-control(type='text', value='스테이튼 아일랜드')
+          .form-group.col-md-6
+            label 형태
+            input.form-control(type='text', value='독채+복층', placeholder='예) 원룸형+복층+테라스 / 독채')
+          .form-group.col-md-6
+            label 객실수
+            .input-group              
+              input.form-control(type='number', value='1')              
+          .form-group.col-md-6
+            label 
+              | 수용인원
+            .form-row
+              .col
+                .input-group              
+                  span.input-group-addon 기준                
+                  input.form-control(type='number', value='4')
+              .col
+                .input-group              
+                  span.input-group-addon 최대
+                  input.form-control(type='number', value='8')
+        
+        .py-4
+
+        .row          
+          .form-group.col-md-6
+            label 
+              | 객실크기
+            .form-row
+              .col
+                .input-group              
+                  input.form-control(type='number', value='')
+                  span.input-group-addon 
+                    | m
+                    sup 2
+              .col
+                .input-group              
+                  input.form-control(type='number', value='')
+                  span.input-group-addon 평
+          .form-group.col-md-12
+            label 
+              | 객실내부
+            .form-row
+              .col
+                .input-group              
+                  span.input-group-addon 침대방
+                  input.form-control(type='number', value='')
+                  span.input-group-addon 개
+              .col
+                .input-group              
+                  span.input-group-addon 온돌방
+                  input.form-control(type='number', value='')
+                  span.input-group-addon 개
+              .col
+                .input-group              
+                  span.input-group-addon 주방
+                  input.form-control(type='number', value='')
+                  span.input-group-addon 개
+              .col
+                .input-group              
+                  span.input-group-addon 화장실
+                  input.form-control(type='number', value='')
+                  span.input-group-addon 개
+
+        .py-4
+        hr.py-2
+        .row
+          .col-4
+            button.btn.btn-secondary.btn-lg.btn-block(type='button', onclick='location.href="/setting/rooms"') 취소
+          .col-8
+            button.btn.btn-primary.btn-lg.btn-block(type='button') 저장

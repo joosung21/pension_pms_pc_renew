@@ -1,2 +1,111 @@
+$blue: #007bff
+
 body
-  background-color: skyblue
+
+.vertical-middle
+  *
+    vertical-align: middle
+
+.input-group-list
+  .title
+    width: 6rem    
+  .input-group
+    margin-bottom: 0.5rem
+
+.cursor-pointer
+  cursor: pointer
+
+table
+  &.table-vertical-middle
+    th, td
+      vertical-align: middle
+  &.table-reorderable
+    tbody
+      cursor: -webkit-grab
+      tr:hover
+        th
+          position: relative
+          top: 0
+          left: 1rem
+          &:before
+            content: "\f07d"
+            font-family: FontAwesome                                    
+            font-size: 18px
+            padding-right: 0.5em
+            position: absolute
+            top: 13px
+            left: 0
+
+#topbar
+  background-color: #343C44
+  a.nav
+    display: block
+    color: #dddddd
+    padding: 1.2rem 1.2rem
+    text-decoration: none
+    transition: all 0.3s
+    *
+      vertical-align: middle
+    &:hover
+      color: #eeeeee
+      background-color: darken(#343C44, 10%)
+    &.active
+      color: #eeeeee
+      background-color: $blue
+  #title
+    color: #eeeeee
+    font-size: 15pt
+    padding: 1.3rem 2rem
+    font-weight: 300
+  #search
+    color: #dddddd
+    border: none
+    padding: 0 1rem 0 2.5rem
+    width: 7.5rem
+    background-color: lighten(#343C44, 10%)
+    background: lighten(#343C44, 10%) url('/images/search.svg') 1rem center no-repeat
+    transition: all 0.3s
+    outline-width: 0
+    &::placeholder
+      color: #dddddd
+      position: relative      
+    &:focus
+      width: 23%
+    &:focus::-webkit-input-placeholder
+      opacity: 0
+#left-side
+  padding-top: 3rem
+  border-right: 1px solid #eeeeee
+  .title
+    padding: 0 2rem 2rem 2rem
+    font-weight: 400
+  .menu-group
+    margin-bottom: 3rem
+    .group-title
+      padding: 0 2rem 0.6rem 2rem
+      color: #666870
+      font-weight: 700
+      i
+        opacity: .5
+    a      
+      display: block
+      color: #888888
+      text-decoration: none
+      padding: 0.4rem 2rem
+      &:hover, &.active
+        color: #333333
+        background-color: #fafafa
+
+#content
+  min-height: calc(100vh - 70px)  
+  padding: 3rem  
+
+
+// Mobile & Tablet devices
+@media (max-width: 767px)
+  #left-side
+    border-bottom: 1px solid #dddddd
+  #content
+    padding: 1rem
+  
+

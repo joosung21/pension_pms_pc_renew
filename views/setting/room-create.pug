@@ -1,0 +1,85 @@
+include ../includes/header.pug
+.row.no-gutters
+  include ../includes/leftside.pug
+
+  #content.col-md-8.col-lg-9.col-xl-10
+    .row.no-gutters
+      .col-md-10.col-xl-8
+        .row
+          .col-md-10
+            h1 새로운 객실추가
+            .lead.mb-5 새로운 객실을 추가합니다.
+
+        .row
+          .form-group.col-md-6
+            label 객실명
+            input.form-control(type='text', value='')
+          .form-group.col-md-6
+            label 형태
+            input.form-control(type='text', value='', placeholder='예) 원룸형+복층+테라스 / 독채')
+          .form-group.col-md-6
+            label 객실수
+            .input-group              
+              input.form-control(type='number', value='1')              
+          .form-group.col-md-6
+            label 
+              | 수용인원
+            .form-row
+              .col
+                .input-group              
+                  span.input-group-addon 기준                
+                  input.form-control(type='number', value='2')
+              .col
+                .input-group              
+                  span.input-group-addon 최대
+                  input.form-control(type='number', value='4')
+        
+        .py-4
+
+        .row          
+          .form-group.col-md-6
+            label 
+              | 객실크기
+            .form-row
+              .col
+                .input-group              
+                  input.form-control(type='number', value='')
+                  span.input-group-addon 
+                    | m
+                    sup 2
+              .col
+                .input-group              
+                  input.form-control(type='number', value='')
+                  span.input-group-addon 평
+          .form-group.col-md-12
+            label 
+              | 객실내부
+            .form-row
+              .col
+                .input-group              
+                  span.input-group-addon 침대방
+                  input.form-control(type='number', value='')
+                  span.input-group-addon 개
+              .col
+                .input-group              
+                  span.input-group-addon 온돌방
+                  input.form-control(type='number', value='')
+                  span.input-group-addon 개
+              .col
+                .input-group              
+                  span.input-group-addon 주방
+                  input.form-control(type='number', value='')
+                  span.input-group-addon 개
+              .col
+                .input-group              
+                  span.input-group-addon 화장실
+                  input.form-control(type='number', value='')
+                  span.input-group-addon 개
+
+        .py-4
+        hr.py-2
+        .row
+          .col-4
+            button.btn.btn-secondary.btn-lg.btn-block(type='button', onclick='location.href="/setting/rooms"') 취소
+          .col-8
+            button.btn.btn-primary.btn-lg.btn-block(type='button') 객실생성

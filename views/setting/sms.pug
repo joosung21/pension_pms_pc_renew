@@ -1,0 +1,197 @@
+include ../includes/header.pug
+.row.no-gutters
+  include ../includes/leftside.pug
+
+  #content.col-md-8.col-lg-9.col-xl-10
+    .row.no-gutters
+      .col-md-12
+        h1 문자발송 정보
+        .lead.mb-5 실시간 예약창에서 들어온 예약에 대해 자동문자 여부와 문구를 관리합니다.
+
+        .btn-group(role='group')
+          button.btn.btn-success(type='button') 문자발송 ON
+          button.btn.btn-light(type='button') OFF
+        
+        //- If switch is off
+        //- .btn-group(role='group')
+        //-   button.btn.btn-light(type='button') 자동문자발송 ON
+        //-   button.btn.btn-secondary(type='button') OFF
+
+        br
+        small.text-muted SMS 발송비용은 자리 서비스에서 부담합니다. (사장님 추가비용 없음)
+
+        .py-4        
+        .form-group
+          label SMS 송수신 전화번호
+          .row
+            .col-lg-6
+              .input-group            
+                input.form-control(type='number', value='')
+                span.input-group-btn
+                  button.btn.btn-secondary(type='button') 인증하기        
+        
+        //- Active verification
+        //- .form-group
+        //-   label SMS 송수신 전화번호
+        //-   .row
+        //-     .col-lg-6              
+        //-       input.form-control(type='number', value='01022685399', disabled)
+        //-       span.input-group-btn                  
+        //-     .col-lg-6
+        //-       .input-group            
+        //-         input.form-control(type='number', value='', placeholder='인증번호 6자리')
+        //-         span.input-group-btn
+        //-           button.btn.btn-secondary(type='button') 인증하기
+        //-         span.input-group-btn
+        //-           button.btn.btn-secondary(type='button') 취소
+        //-       small 남은시간 2:56
+
+
+        .py-4
+        h3 문자내용 수정
+        p 
+          | '@' 마크는 자동으로 입력되는 정보입니다.          
+        hr
+        .row.align-items-center
+          .col-lg-4.text-center
+            h5 
+              | 예약대기
+            small.text-muted  무통장입금 선택시
+          .col-lg-4
+            .form-group
+              label 업주문자
+              textarea.form-control.bg-light(rows='7').
+                [TPORT] @고객명님 @객실명방 입금대기중
+
+                - 이용일: @입실일
+                - 결제금액: @결제금액원
+              small.text-muted 80 / 80
+          .col-lg-4
+            .form-group
+              label 고객문자
+              textarea.form-control.bg-light(rows='7').
+                [@업체명] @결제금액원을 입금해주세요. @입금대기시간시간내 미입금시 예약이 자동취소됩니다.
+
+                - 객실명: @객실명방
+                - 이용일: @입실일
+                - 입금계좌: @계좌번호
+              small.text-muted 150 / 2000
+        hr
+        .row.align-items-center
+          .col-lg-4
+            h5.text-center 대기중 취소
+          .col-lg-4
+            .form-group
+              label 업주문자
+              textarea.form-control.bg-light(rows='3').
+                [TPORT] @고객명님 @객실명방 @입실일 미입금 자동취소
+              small.text-muted 51 / 80
+          .col-lg-4
+            .form-group
+              label 고객문자
+              textarea.form-control.bg-light(rows='3').
+                [@업체명] @고객명님의 @객실명방 예약이 대기중 미입금으로 자동취소되었습니다.
+              small.text-muted 70 / 80          
+        hr
+        .row.align-items-center
+          .col-lg-4.text-center
+            h5 예약완료(카드)
+          .col-lg-4
+            .form-group
+              label 업주문자
+              textarea.form-control.bg-light(rows='16').
+                [TPORT] @고객명님 예약완료.
+
+                - 객실명: @객실명방
+                - 이용일: @입실일
+                - 이용인원: @객실이용인원명
+
+                - 고객전화: @고객전화번호
+                - 고객요청사항: @고객요청사항
+
+                - 결제금액: @결제금액
+                - 결제방식: 카드
+              small.text-muted 191 / 2000
+          .col-lg-4
+            .form-group
+              label 고객문자
+              textarea.form-control.bg-light(rows='16').
+                [@업체명] @고객명님 예약이 완료되었습니다.
+
+                - 객실명: @객실명방
+                - 이용일: @입실일
+                - 이용인원: @객실이용인원명
+
+                - 펜션주소: @업체주소
+                - 펜션전화: @업체전화번호
+                - 고객요청사항: @고객요청사항
+
+                - 결제금액: @결제금액
+                - 결제방식: 카드
+
+                오시기 전에 필요하신 사항을 알려주시면 준비해드리겠습니다.
+              small.text-muted 288 / 2000
+        hr
+        .row.align-items-center
+          .col-lg-4.text-center
+            h5 예약완료(무통장)
+          .col-lg-4
+            .form-group
+              label 업주문자
+              textarea.form-control.bg-light(rows='18').
+                [[TPORT] @고객명님 @객실명방 @입실일 예약완료.
+
+                - 객실명: @객실명방
+                - 이용일: @입실일
+                - 이용인원: @객실이용인원명
+
+                - 고객전화: @고객전화번호
+                - 고객요청사항: @고객요청사항
+
+                - 결제금액: @결제금액
+                - 결제방식: 무통장입금
+              small.text-muted 215 / 2000
+          .col-lg-4
+            .form-group
+              label 고객문자
+              textarea.form-control.bg-light(rows='18').
+                [@업체명] @고객명님의 예약이 확정되었습니다. (입금완료)
+
+                - 객실명: @객실명방
+                - 이용일: @입실일
+                - 이용인원: @객실이용인원명
+
+                - 펜션주소: @업체주소
+                - 펜션전화: @업체전화번호
+                - 고객요청사항: @고객요청사항
+                - 입실시간: 오후 3시
+
+                - 결제금액: @결제금액
+                - 결제방식: 무통장입금
+
+                오시기 전에 필요하신 사항을 알려주시면 준비해드리겠습니다.
+              small.text-muted 328 / 2000
+        hr
+        .row.align-items-center
+          .col-lg-4.text-center
+            h5 예약취소
+          .col-lg-4
+            .form-group
+              label 업주문자
+              textarea.form-control.bg-light(rows='3').
+                [TPORT] @고객명님 @객실명방 @입실일 예약취소
+              small.text-muted 44 / 80
+          .col-lg-4
+            .form-group
+              label 고객문자
+              textarea.form-control.bg-light(rows='3').
+                [@업체명] @고객명님의 예약이 취소되었습니다.
+              small.text-muted 44 / 80
+          
+        .py-4
+        hr.py-2
+        .row
+          .col-4
+            button.btn.btn-secondary.btn-lg.btn-block(type='button') 취소
+          .col-8
+            button.btn.btn-primary.btn-lg.btn-block(type='button') 저장

@@ -1,0 +1,160 @@
+include ../includes/header.pug
+.row.no-gutters
+  include ../includes/leftside.pug
+
+  #content.col-md-8.col-lg-9.col-xl-10
+    .row.no-gutters
+      .col-md-10.col-xl-8
+        h1 예약운영 정보
+        .lead.mb-5 실시간 예약창의 주소와 안내문구, 결제방식 등을 관리합니다.
+
+        h3 실시간예약창
+        p.pb-4 홈페이지에 삽입하여 이용할 수 있는 팝업형 실시간예약창 입니다. 무통장입금, 카드결제로 예약금을 결제받을 수 있고 예약이 발행하면 문자메시지 알림을 받을 수 있습니다.
+        
+
+        .btn-group(role='group')
+          button.btn.btn-success(type='button') 실시간예약창 ON
+          button.btn.btn-light(type='button') OFF
+        
+        //- If switch is off
+        //- .btn-group(role='group')
+        //-   button.btn.btn-light(type='button') 실시간예약창 ON
+        //-   button.btn.btn-secondary(type='button') OFF
+
+        .py-4
+        .form-group
+          h5 실시간예약창 주소
+          .input-group            
+            span.input-group-addon https://app.onda.me/v2/booking/
+            input.form-control(type='text', value='7248')
+            span.input-group-btn
+              button.btn.btn-secondary(type='button')
+                i.fa.fa-file-text.fa-lg.mr-1
+                span 주소복사          
+          small.form-text.text-muted a-z 영문 10글자 이내의 주소
+
+        .py-3
+        .form-group
+          h5 실시간예약창 요금표시
+          .form-check
+            label.form-check-label
+              input.form-check-input(type='radio', name='radio1', value='priceOff', checked='')
+              | 객실명만 표시
+            button.btn.btn-secondary.btn-sm.ml-2(type='button', data-toggle='collapse', data-target='#collapse1')
+              | 예시보기
+          #collapse1.collapse
+            img.ml-4.mb-4(src='/images/show_price_default_false.png')         
+          .form-check
+            label.form-check-label
+              input.form-check-input(type='radio', name='radio1', value='priceOn')
+              | 객실명과 요금을 함께 표시
+            button.btn.btn-secondary.btn-sm.ml-2(type='button', data-toggle='collapse', data-target='#collapse2')
+              | 예시보기
+          #collapse2.collapse
+            img.ml-4(src='/images/show_price_default_true.png')
+
+        .py-3
+        
+        h5 결제방식 선택
+        .form-check
+          label.form-check-label
+            input.form-check-input(type='checkbox', value='', checked)
+            | 카드결제
+        .form-check
+          label.form-check-label.mb-2
+            input.form-check-input(type='checkbox', value='', checked)
+            | 무통장입금
+          .input-group.mt-3.pl-4.mb-3
+            span.input-group-addon 무통장입금 기한
+            input.form-control(type='number', value='24')
+            span.input-group-addon 시간          
+          .form-group.pl-4
+            label 무통장입금 안내문구
+            textarea.form-control(rows='3', placeholder='무통장입금 계좌번호/은행/계좌주, 환불사항 등을 알려주세요.')
+
+        .py-3
+
+        h5 
+          | 취소환불 정책
+          small.text-secondary  입실일 기준
+        .row.no-gutters
+          .input-group-list.col-lg-6
+            .input-group
+              span.input-group-addon.title 10일전
+              input.form-control(type='number', min='0', max='100', step='10', value='100')
+              span.input-group-addon %
+              span.input-group-addon 환불
+            .input-group
+              span.input-group-addon.title 9일전
+              input.form-control(type='number', min='0', max='100', step='10', value='90')
+              span.input-group-addon %
+              span.input-group-addon 환불
+            .input-group
+              span.input-group-addon.title 8일전
+              input.form-control(type='number', min='0', max='100', step='10', value='80')
+              span.input-group-addon %
+              span.input-group-addon 환불
+            .input-group
+              span.input-group-addon.title 7일전
+              input.form-control(type='number', min='0', max='100', step='10', value='70')
+              span.input-group-addon %
+              span.input-group-addon 환불
+            .input-group
+              span.input-group-addon.title 6일전
+              input.form-control(type='number', min='0', max='100', step='10', value='60')
+              span.input-group-addon %
+              span.input-group-addon 환불
+            .input-group
+              span.input-group-addon.title 5일전
+              input.form-control(type='number', min='0', max='100', step='10', value='50')
+              span.input-group-addon %
+              span.input-group-addon 환불
+            .input-group
+              span.input-group-addon.title 4일전
+              input.form-control(type='number', min='0', max='100', step='10', value='40')
+              span.input-group-addon %
+              span.input-group-addon 환불
+            .input-group
+              span.input-group-addon.title 3일전
+              input.form-control(type='number', min='0', max='100', step='10', value='30')
+              span.input-group-addon %
+              span.input-group-addon 환불
+            .input-group
+              span.input-group-addon.title 2일전
+              input.form-control(type='number', min='0', max='100', step='10', value='20')
+              span.input-group-addon %
+              span.input-group-addon 환불
+            .input-group
+              span.input-group-addon.title 전날취소
+              input.form-control(type='number', min='0', max='100', step='10', value='10')
+              span.input-group-addon %
+              span.input-group-addon 환불
+            .input-group
+              span.input-group-addon.title 당일취소
+              input.form-control(type='number', min='0', max='100', step='10', value='0')
+              span.input-group-addon %
+              span.input-group-addon 환불
+        
+        .py-4
+
+        h3 예약 안내글
+        p.pb-4 실시간예약창에 표기될 예약안내 글을 수정할 수 있습니다.
+
+        .form-group
+          label 업체 소개글
+          textarea.form-control(rows='3', placeholder='업체를 소개할 수 있는 내용을 입력해주세요.')
+        .form-group
+          label 예약 공지사항
+          textarea.form-control(rows='3', placeholder='인원추가금액 또는 예약시 주의해야할 내용을 알려주세요.')
+        .form-group
+          label 무통장입금 메모
+          textarea.form-control(rows='3', placeholder='통장입금 계좌번호/은행/계좌주, 환불사항등을 알려주세요.')
+        
+        
+        .py-4
+        hr.py-2
+        .row
+          .col-4
+            button.btn.btn-secondary.btn-lg.btn-block(type='button') 취소
+          .col-8
+            button.btn.btn-primary.btn-lg.btn-block(type='button') 저장

@@ -1,0 +1,135 @@
+include ../includes/header.pug
+.row.no-gutters
+  include ../includes/leftside.pug
+
+  #content.col-md-8.col-lg-9.col-xl-10
+    .row.no-gutters
+      .col-md-12.col-xl-10
+        h1 추가인원 요금
+        .lead.mb-5 전체객실 또는 객실별 추가인원 요금을 설정할 수 있습니다.
+        
+        .row
+          .col-md-6
+            .form-group
+              label 요금지불 방법
+              select.form-control
+                option 추가요금 온라인결제
+                option 추가요금 현장결제
+                option 추가요금 없음
+        .py-4
+
+        h5 추가인원 요금
+        table.table.vertical-middle
+          thead
+            tr
+              th(scope='col', style='width: 30%') 객실명
+              th(scope='col') 성인
+              th(scope='col') 아동
+              th(scope='col') 유아                
+          tbody
+            tr
+              th.align-middle(scope='row') 전체객실
+              td
+                .input-group
+                  input.form-control(type='text', value='20,000')
+                  span.input-group-addon 원
+              td
+                .input-group
+                  input.form-control(type='text', value='10,000')
+                  span.input-group-addon 원
+              td
+                .input-group
+                  input.form-control(type='text', value='0')
+                  span.input-group-addon 원
+        .form-check(data-toggle='collapse', data-target='#collapse1')
+          label.form-check-label
+            input.form-check-input(type='checkbox', value='')
+            | 객실별로 추가인원 요금이 다릅니다.
+
+        #collapse1.collapse.mt-4
+          table.table.vertical-middle
+            thead
+              tr
+                th(scope='col', style='width: 30%') 객실명
+                th(scope='col') 성인
+                th(scope='col') 아동
+                th(scope='col') 유아                
+            tbody
+              tr
+                th.align-middle(scope='row') 스테이튼 아일랜드
+                td
+                  .input-group
+                    input.form-control(type='text', value='20,000')
+                    span.input-group-addon 원
+                td
+                  .input-group
+                    input.form-control(type='text', value='10,000')
+                    span.input-group-addon 원
+                td
+                  .input-group
+                    input.form-control(type='text', value='0')
+                    span.input-group-addon 원
+              tr
+                th.align-middle(scope='row') 맨하탄
+                td
+                  .input-group
+                    input.form-control(type='text', value='20,000')
+                    span.input-group-addon 원
+                td
+                  .input-group
+                    input.form-control(type='text', value='10,000')
+                    span.input-group-addon 원
+                td
+                  .input-group
+                    input.form-control(type='text', value='0')
+                    span.input-group-addon 원
+              tr
+                th.align-middle(scope='row') 아스토리아
+                td
+                  .input-group
+                    input.form-control(type='text', value='20,000')
+                    span.input-group-addon 원
+                td
+                  .input-group
+                    input.form-control(type='text', value='10,000')
+                    span.input-group-addon 원
+                td
+                  .input-group
+                    input.form-control(type='text', value='0')
+                    span.input-group-addon 원
+              tr
+                th.align-middle(scope='row') 브롱스
+                td
+                  .input-group
+                    input.form-control(type='text', value='20,000')
+                    span.input-group-addon 원
+                td
+                  .input-group
+                    input.form-control(type='text', value='10,000')
+                    span.input-group-addon 원
+                td
+                  .input-group
+                    input.form-control(type='text', value='0')
+                    span.input-group-addon 원
+              tr
+                th.align-middle(scope='row') 부르클린
+                td
+                  .input-group
+                    input.form-control(type='text', value='20,000')
+                    span.input-group-addon 원
+                td
+                  .input-group
+                    input.form-control(type='text', value='10,000')
+                    span.input-group-addon 원
+                td
+                  .input-group
+                    input.form-control(type='text', value='0')
+                    span.input-group-addon 원
+
+        .py-4
+        hr.py-2
+        .row
+          .col-4
+            button.btn.btn-secondary.btn-lg.btn-block(type='button') 취소
+          .col-8
+            button.btn.btn-primary.btn-lg.btn-block(type='button') 저장
