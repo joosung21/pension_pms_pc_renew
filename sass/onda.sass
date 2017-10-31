@@ -1,4 +1,11 @@
 $blue: #007bff
+$creamblue: #4C9BD3
+$green: #79C732
+$red: #FC4948
+$yellow: #FDC62D
+$gray: #D2D2D2
+$dark: #343C44
+
 
 body
 
@@ -14,6 +21,10 @@ body
 
 .cursor-pointer
   cursor: pointer
+
+.btn-white
+  background-color: white
+  border-color: white
 
 table
   &.table-vertical-middle
@@ -37,7 +48,7 @@ table
             left: 0
 
 #topbar
-  background-color: #343C44
+  background-color: $dark
   a.nav
     display: block
     color: #dddddd
@@ -100,12 +111,150 @@ table
   min-height: calc(100vh - 70px)  
   padding: 3rem  
 
-
 // Mobile & Tablet devices
 @media (max-width: 767px)
   #left-side
     border-bottom: 1px solid #dddddd
   #content
     padding: 1rem
-  
 
+
+// Bootstrap Overide
+
+.modal-header  
+  background-color: #f1f1f1
+  
+// 객실달력
+table.table-calendar
+  width: 100%
+  th.holiday, td.holiday .date
+    color: #FC4948
+  thead th
+    font-size: 18pt
+    font-weight: 400
+    text-align: center
+    position: fixed-top
+  tbody td
+    position: relative
+    border: 1px solid #dddddd  
+    width: 14.25vw
+    vertical-align: top
+    padding: 0.5rem
+    &.dimed::after
+      width: 100%
+      height: 100%
+      content: ' '
+      position: absolute
+      left: 0
+      top: 0
+      background-color: #eeeeee
+      opacity: .7
+    &.past::after
+      width: 100%
+      height: 100%
+      content: ' '
+      position: absolute
+      left: 0
+      top: 0
+      background-color: white
+      opacity: .7
+    .date
+      font-weight: 500
+      font-size: 14pt
+      margin-bottom: 1.5rem
+      &.today
+        background: $dark
+        color: white
+        border-radius: 1rem
+        padding: 0 .5rem
+    .special-day
+      color: $red
+      margin-left: .3rem
+
+    .season
+      color: #bbbbbb      
+    .other-month
+      text-align: center
+      padding-top: 1rem
+      padding-bottom: 4rem
+    .room
+      position: relative
+      cursor: default
+      padding: .4rem 0
+      &:hover
+        background-color: #f1f1f1
+      .price
+        text-align: right
+        font-size: 14pt
+
+    .stock
+      margin-left: 1.5rem
+      margin-right: -.24rem
+      margin-bottom: .2rem
+      a 
+        display: inline-block
+        color: white
+        font-size: 11pt
+        width: 1.55rem
+        height: 1.55rem
+        padding: .15rem .35rem
+        margin: .23rem 
+        border-radius: .2rem
+        text-decoration: none
+        &.available
+          background-color: $green
+          &:hover
+            background-color: darken($green, 6%)
+        &.complete
+          background-color: $red
+          &:hover
+            background-color: darken($red, 15%)
+        &.waiting
+          background-color: $creamblue
+          &:hover
+            background-color: darken($creamblue, 10%)
+        &.callonly
+          background-color: $yellow
+          &::before
+            content: "\f095"
+            font-family: FontAwesome
+          &:hover
+            background-color: darken($yellow, 10%)
+        &.blocked
+          background-color: $gray
+          &::before
+            content: "\f05e"
+            font-family: FontAwesome
+          &:hover
+            background-color: darken($gray, 10%)
+          
+.status
+  display: inline-block
+  margin-right: .4rem
+  color: white
+  font-size: 11pt
+  padding: .13rem .35rem
+  border-radius: .2rem        
+  &.complete
+    background-color: $red
+    &::before
+      content: '완'          
+  &.available
+    background-color: $green
+    &::before
+      content: '가'
+  &.waiting
+    background-color: $creamblue
+    &::before
+      content: '대'
+  &.callonly
+    background-color: $yellow
+    &::before                    
+      content: "\f095"
+      font-family: FontAwesome
+  &.blocked
+    background-color: $gray
+    &::before       
+      content: "\f05e"
+      font-family: FontAwesome     
+            

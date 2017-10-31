@@ -67,7 +67,7 @@ include includes/header.pug
           th 결제수단
           th 상태          
       tbody.cursor-pointer
-        tr(data-toggle='modal' data-id='1' data-target='#exampleModal')
+        tr(data-toggle='modal', data-id='1', data-target='#exampleModal')
           td 2017-10-26
           td 7박
           td 아스토리아
@@ -79,7 +79,7 @@ include includes/header.pug
           td.text-muted
             i.fa.fa-clock-o.fa-lg
             span.pl-1 예약대기
-        tr(data-toggle='modal' data-id='1' data-target='#exampleModal')
+        tr(data-toggle='modal', data-id='1', data-target='#exampleModal')
           td 2017-11-01
           td 1박
           td 맨하탄
@@ -89,7 +89,7 @@ include includes/header.pug
           td 200,000 원
           td 무통장입금
           td 예약완료
-        tr(data-toggle='modal' data-id='1' data-target='#exampleModal')
+        tr(data-toggle='modal', data-id='1', data-target='#exampleModal')
           td 2017-11-24
           td 2박
           td 브롱스
@@ -99,7 +99,7 @@ include includes/header.pug
           td 240,000 원
           td 카드결제
           td 예약완료
-        tr(data-toggle='modal' data-id='1' data-target='#exampleModal')
+        tr(data-toggle='modal', data-id='1', data-target='#exampleModal')
           td 2017-12-01
           td 1박
           td 부르클린
@@ -111,7 +111,7 @@ include includes/header.pug
           td.text-muted
             i.fa.fa-clock-o.fa-lg
             span.pl-1 예약대기
-        tr(data-toggle='modal' data-id='1' data-target='#exampleModal')
+        tr(data-toggle='modal', data-id='1', data-target='#exampleModal')
           td 2017-12-15
           td 1박
           td 스테이튼 아일랜드
@@ -121,7 +121,7 @@ include includes/header.pug
           td 300,000 원
           td 카드결제
           td 예약완료
-        tr(data-toggle='modal' data-id='1' data-target='#exampleModal')
+        tr(data-toggle='modal', data-id='1', data-target='#exampleModal')
           td 2017-10-26
           td 7박
           td 아스토리아
@@ -133,7 +133,7 @@ include includes/header.pug
           td.text-muted
             i.fa.fa-clock-o.fa-lg
             span.pl-1 예약대기
-        tr(data-toggle='modal' data-id='1' data-target='#exampleModal')
+        tr(data-toggle='modal', data-id='1', data-target='#exampleModal')
           td 2017-11-01
           td 1박
           td 맨하탄
@@ -143,7 +143,7 @@ include includes/header.pug
           td 200,000 원
           td 무통장입금
           td 예약완료
-        tr(data-toggle='modal' data-id='1' data-target='#exampleModal')
+        tr(data-toggle='modal', data-id='1', data-target='#exampleModal')
           td 2017-11-24
           td 2박
           td 브롱스
@@ -153,7 +153,7 @@ include includes/header.pug
           td 240,000 원
           td 카드결제
           td 예약완료
-        tr(data-toggle='modal' data-id='1' data-target='#exampleModal')
+        tr(data-toggle='modal', data-id='1', data-target='#exampleModal')
           td 2017-12-01
           td 1박
           td 부르클린
@@ -165,7 +165,7 @@ include includes/header.pug
           td.text-muted
             i.fa.fa-clock-o.fa-lg
             span.pl-1 예약대기
-        tr(data-toggle='modal' data-id='1' data-target='#exampleModal')
+        tr(data-toggle='modal', data-id='1', data-target='#exampleModal')
           td 2017-12-15
           td 1박
           td 스테이튼 아일랜드
@@ -201,8 +201,8 @@ include includes/header.pug
               span(aria-hidden='true') ×
           .modal-body
             .row
-              .col-md-6
-                h3.mb-4 고객정보
+              .col-md-4              
+                h3.mb-4 예약정보
                 .form-group
                   label 예약자명
                   input.form-control(type='text', value='아이유')
@@ -210,16 +210,24 @@ include includes/header.pug
                   label 전화번호
                   input.form-control(type='text', value='010-5540-5200')
                 .form-group
-                  label 메모
+                  label 예약상태
+                  select.form-control
+                    option 입금대기
+                    option 예약완료
+                .form-group
+                  label 예약요청일시
+                  input.form-control(type='text', value='2017-10-17 14:37:21', disabled)
+                .form-group
+                  label 예약메모
                   textarea.form-control(rows='4')
                 .form-group
-                  button.btn.btn-secondary(type='button', data-toggle='collapse', data-target='#collapse1')
+                  button.btn.btn-light(type='button', data-toggle='collapse', data-target='#collapse1')
+                    i.fa.fa-envelope.fa-lg.mr-1
                     span 문자발송내역
-                    i.fa.fa-angle-down.ml-2
                   
                   //- 문자발송내역
                   #collapse1.collapse.mt-2
-                    textarea.form-control(rows='9', disabled).
+                    textarea.form-control(rows='17', disabled).
                       [@업체명] @고객명님 예약이 완료되었습니다.
 
                       - 객실명: @객실명방
@@ -235,54 +243,104 @@ include includes/header.pug
 
                       오시기 전에 필요하신 사항을 알려주시면 준비해드리겠습니다.
 
-              .col-md-6
-                h3.mb-4 예약정보
-                .form-group
-                  label 예약상태
-                  select.form-control
-                    option 입금대기
-                    option 예약완료
-                .form-group
-                  label 예약요청일
-                  input.form-control(type='text', value='2017-10-17 14:37:21', disabled)
+              .col-md-8
+                h3.mb-4 입실정보
                 .form-row
                   .col
                     .form-group   
                       label 입실일
-                      input.form-control(type='text', value='2017-11-18', disabled)
+                      input.form-control(type='date', value='2017-11-18')
                   .col
                     .form-group
                       label 퇴실일
-                      input.form-control(type='text', value='2017-11-19', disabled)
+                      input.form-control(type='date', value='2017-11-19')
+                .form-row
+                  .col
+                    .form-group   
+                      label 도착예정시간
+                      input.form-control(type='time', value='')
+                  .col
+                    .form-group
+                      label 퇴실예정시간
+                      input.form-control(type='time', value='')
                 .form-group
                   label 예약객실
-                  input.form-control(type='text', value='아스토리아', disabled)
+                  select.form-control
+                    option(selected) 맨하탄
+                    option(disabled) 스테이튼 아일랜드 (완료)
+                    option 브롱스
+                    option 부르클린
+                    option 아스토리아
                 .form-group
                   label 투숙인원
                   .form-row
                     .col
                       .input-group
                         span.input-group-addon 성인
-                        input.form-control(type='number', value='2', disabled)
+                        input.form-control(type='number', value='2', min='0')
                     .col
                       .input-group
                         span.input-group-addon 아동
-                        input.form-control(type='number', value='0', disabled)
+                        input.form-control(type='number', value='0', min='0')
                     .col  
                       .input-group
                         span.input-group-addon 유아
-                        input.form-control(type='number', value='0', disabled)
+                        input.form-control(type='number', value='0', min='0')
                 .form-group
                   label 부가서비스
-                  .card
-                    .card-body
-                      .row
-                        .col 바베큐
-                        .col x 1
-                        .col.text-right 30,000원
+                  .form-row
+                    .col-5
+                      h6.p-2 바베큐(참숯+그릴)                        
+                    .col-3
+                      .input-group
+                        input.form-control(type='number', value='1', min='0')
+                        span.input-group-addon 개
+                    .col-4
+                      .input-group
+                        input.form-control(type='text', value='30,000')
+                        span.input-group-addon 원                
+                  .form-row
+                    .col-5
+                      h6.p-2 조식서비스
+                    .col-3
+                      .input-group
+                        input.form-control(type='number', value='0', min='0')
+                        span.input-group-addon 개
+                    .col-4
+                      .input-group
+                        input.form-control(type='text', value='0')
+                        span.input-group-addon 원                
+                .form-row
+                  .col-8
+                    .form-group
+                      label 결제금
+                      .input-group
+                        input.form-control.form-control-lg.text-right(type='text', value='880,000', disabled)
+                        span.input-group-addon 원
+                  .col-4
+                    .form-group
+                      label + 현장결제금
+                      .input-group
+                        input.form-control.form-control-lg.text-right(type='text', value='0')
+                        span.input-group-addon 원
+
                 .form-group
-                  label 총금액
-                  input.form-control.text-right(type='text', value='880,000 원', disabled)
+                  lable 손님맞이 준비
+                  .d-flex
+                    .form-check.px-3.ml-auto
+                      label.form-check-label
+                        input.form-check-input(type='checkbox')
+                        | 바베큐
+                  
+                    .form-check.px-3
+                      label.form-check-label
+                        input.form-check-input(type='checkbox')
+                        | 조식
+                  
+                    .form-check.px-3
+                      label.form-check-label
+                        input.form-check-input(type='checkbox')
+                        | 픽업          
             
           .modal-footer
             - 
@@ -302,7 +360,7 @@ include includes/header.pug
                   swal("예약이 취소 되었습니다!", "환불금: 240,000원", "success");
                 });
               `
-            button.btn.btn-secondary.mr-auto(type='button', data-dismiss='modal', onclick= message01)
+            button.btn.btn-danger.mr-auto(type='button', data-dismiss='modal', onclick= message01)
               i.fa.fa-times.fa-lg.mr-1
               span 예약취소              
             button.btn.btn-secondary(type='button', data-dismiss='modal') 닫기
