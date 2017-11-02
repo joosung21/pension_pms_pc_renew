@@ -22,7 +22,7 @@ app.get('/calendar', function (req, res){res.render('calendar')})
 // 방막기
 app.get('/close', function (req, res){res.render('close')})
 
-// 방막기
+// 정산목록
 app.get('/transaction', function (req, res){res.render('transaction')})
 
 // 판매 환경설정
@@ -37,6 +37,14 @@ app.get('/setting/extra', function (req, res){res.render('setting/extra')})
 app.get('/setting/business', function (req, res){res.render('setting/business')})
 app.get('/setting/plugin', function (req, res){res.render('setting/plugin')})
 app.get('/setting/sms', function (req, res){res.render('setting/sms')})
+
+
+//------------ TMON HOTEL EXTRANET ------------------------//
+
+app.get('/hotel', function (req, res){res.render('hotel/setting/hotel')})
+
+app.get('/hotel/setting/hotel', function (req, res){res.render('hotel/setting/hotel')})
+
 
 app.listen(3000, function () {
   console.log('App listening on port 3000!')

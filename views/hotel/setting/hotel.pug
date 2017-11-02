@@ -1,0 +1,166 @@
+include ../../includes/header.pug
+include ../../includes/topbar-hotel.pug
+
+.row.no-gutters
+  include ../../includes/leftside-hotel.pug
+
+  #content.col-md-8.col-lg-9.col-xl-10
+    .row.no-gutters
+      .col-md-10.col-xl-8
+        h1 호텔정보
+        .lead.mb-5 호텔의 기본정보를 설정합니다.        
+        .form-group.row
+          label.col-md-3.col-form-label 호텔명
+          .col-md-9
+            input.form-control(type='text', value='')
+        .form-group.row
+          label.col-md-3.col-form-label 등급/유형
+          .col-md-9
+            .form-row
+              .col
+                select.form-control
+                  option(selected) 호텔 등급을 선택해주세요...
+                  option 1성
+                  option 2성
+                  option 3성
+                  option 4성
+                  option 5성
+              .col
+                select.form-control
+                  option(selected) 호텔 유형을 선택해주세요...
+                  option 특1급
+                  option 특급
+                  option 1급
+                  option 관광
+                  option 비즈니스
+                  option 레지던스
+                  option 리조트
+                  option 콘도
+                  option 부티크
+        .form-group.row
+          label.col-md-3.col-form-label 호텔주소
+          .col-md-9
+            button.btn.btn-primary(type='button') 주소찾기
+            .py-2
+            .input-group
+              .input-group-addon(style='width:66px') 지번
+              input.form-control(type='text', value='')
+            .py-2
+            .input-group
+              .input-group-addon(style='width:66px') 도로명
+              input.form-control(type='text', value='')
+        .form-group.row
+          label.col-md-3.col-form-label 체크인/체크아웃
+          .col-md-9
+            .form-row
+              .col
+                .input-group
+                  .input-group-addon 체크인
+                  input.form-control(type='time', value='15:00')
+              .col
+                .input-group
+                  .input-group-addon 체크아웃
+                  input.form-control(type='time', value='12:00')
+        .form-group.row
+          label.col-md-3.col-form-label 호텔소개
+          .col-md-9
+            textarea.form-control(rows='4')
+        .form-group.row
+          label.col-md-3.col-form-label 예약안내
+          .col-md-9
+            textarea.form-control(rows='4')
+
+        hr.my-5
+
+        .form-group.row
+          label.col-md-3.col-form-label 호텔사진
+          .col-md-9
+            p 사진순서는 드래그로 변경 가능하며, 첫번째 사진이 대표 사진으로 설정됩니다.
+            .image-upload.form-row
+              .unit.col-4.grabbable(dragable=true)
+                img.img-thumbnail(src='/images/temp-hotel-01.png')
+                button.btn.btn-dark(type='btn')
+                  i.fa.fa-trash-o.fa-lg
+                input.form-control.mt-1(type='text', value='', placeholder='사진설명')  
+              .unit.col-4.grabbable(dragable=true)
+                img.img-thumbnail(src='/images/temp-hotel-02.png')
+                button.btn.btn-dark(type='btn')
+                  i.fa.fa-trash-o.fa-lg
+                input.form-control.mt-1(type='text', value='', placeholder='사진설명')          
+              .unit.col-4.grabbable(dragable=true)
+                img.img-thumbnail(src='/images/temp-hotel-03.png')
+                button.btn.btn-dark(type='btn')
+                  i.fa.fa-trash-o.fa-lg
+                input.form-control.mt-1(type='text', value='', placeholder='사진설명')          
+              .unit.col-4.grabbable(dragable=true)
+                img.img-thumbnail(src='/images/temp-hotel-04.png')
+                button.btn.btn-dark(type='btn')
+                  i.fa.fa-trash-o.fa-lg
+                input.form-control.mt-1(type='text', value='', placeholder='사진설명')          
+              .unit.col-4.grabbable(dragable=true)
+                img.img-thumbnail(src='/images/temp-hotel-05.png')
+                button.btn.btn-dark(type='btn')
+                  i.fa.fa-trash-o.fa-lg
+                input.form-control.mt-1(type='text', value='', placeholder='사진설명')          
+              .unit.col-4.grabbable(dragable=true)
+                img.img-thumbnail(src='/images/temp-hotel-06.png')
+                button.btn.btn-dark(type='btn')
+                  i.fa.fa-trash-o.fa-lg
+                input.form-control.mt-1(type='text', value='', placeholder='사진설명')
+            label.btn.btn-primary
+              i.fa.fa-camera.fa-lg.mr-1
+              span 사진추가
+              input(type='file', hidden)
+        
+        hr.my-5
+
+        .form-group.row
+          label.col-md-3.col-form-label 공공시설
+          .col-md-9
+            .card
+              .card-body
+                .check-group.d-flex.flex-wrap
+                  .form-check
+                    label.form-check-label
+                      input.form-check-input(type='checkbox')
+                      | 노래방
+                  .form-check
+                    label.form-check-label
+                      input.form-check-input(type='checkbox')
+                      | 매점/편의점
+                  .form-check
+                    label.form-check-label
+                      input.form-check-input(type='checkbox')
+                      | 바베큐장
+                  .form-check
+                    label.form-check-label
+                      input.form-check-input(type='checkbox')
+                      | 세미나실
+                  .form-check
+                    label.form-check-label
+                      input.form-check-input(type='checkbox')
+                      | 수영장
+                  .form-check
+                    label.form-check-label
+                      input.form-check-input(type='checkbox')
+                      | 카페
+                  .form-check
+                    label.form-check-label
+                      input.form-check-input(type='checkbox')
+                      | 피트니스
+                  .form-check
+                    label.form-check-label
+                      input.form-check-input(type='checkbox')
+                      | 공용스파
+                  .form-check
+                    label.form-check-label
+                      input.form-check-input(type='checkbox')
+                      | 골프장
+                  .form-check
+                    label.form-check-label
+                      input.form-check-input(type='checkbox')
+                      | 레스토랑
+                  .form-check
+                    label.form-check-label
+                      input.form-check-input(type='checkbox')
+                      | 키즈플레이

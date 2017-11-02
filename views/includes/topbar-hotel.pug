@@ -1,0 +1,29 @@
+#topbar.row.no-gutters
+  .col-lg-8.d-md-flex
+    a#title.nav(href='/reservations') 홀리데이 인 송도    
+    a.nav(href='#')
+      i.fa.fa-reorder.fa-2x.mr-1
+      span 예약목록
+    a.nav(href='#')
+      i.fa.fa-hotel.fa-2x.mr-2
+      span 요금/재고관리
+  .col-lg-4.d-flex
+    a.nav.active.ml-auto(href='/hotel/setting/hotel')
+      i.fa.fa-gear.fa-2x.mr-1
+      span 호텔설정
+    .dropdown.show
+      a.nav(href='#', role='button', id='dropdownUser', data-toggle='dropdown', aria-haspopiup='true', aria-expanded='false')
+        i.fa.fa-user.fa-2x
+        span 김온다
+        i.fa.fa-angle-down.ml-2
+      .dropdown-menu(aria-labelledby='dropdownUser')
+        //- .px-4
+        //-   small.text-muted 언어선택
+        //- a.dropdown-item(href='#') English
+        //- a.dropdown-item(href='#') 한국어
+        //- .dropdown-divider
+        //- a.dropdown-item(href='#') 도움말
+        //- a.dropdown-item(href='#') 공지사항
+        //- a.dropdown-item(href='#') 문의 &amp; 수정요청
+        //- .dropdown-divider
+        //- a.dropdown-item(href='/login') 로그아웃

@@ -26,6 +26,35 @@ body
   background-color: white
   border-color: white
 
+.image-upload
+  .unit
+    position: relative
+    padding-bottom: 2rem
+    .img-thumbnail      
+      + button
+        position: absolute
+        right: 0.4rem
+        top: 0.1rem
+        display: none
+    &:hover
+      .img-thumbnail
+        + button
+          display: inline-block
+.grabbable
+  cursor: move
+  cursor: grab
+  cursor: -moz-grab
+  cursor: -webkit-grab
+ 
+.grabbable:active
+  cursor: grabbing
+  cursor: -moz-grabbing
+  cursor: -webkit-grabbing
+
+.check-group
+  .form-check
+    width: 9rem
+
 dl.title-right
   dt
     text-align: right
@@ -260,3 +289,6 @@ table.table-calendar
 .block-btns
   button:hover
     box-shadow: 0px 5px 1rem rgba(0,0,0,0.3)
+
+
+// Hotel Setting-Hotel
