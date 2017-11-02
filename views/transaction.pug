@@ -1,0 +1,188 @@
+include includes/header.pug
+.row.no-gutters
+  #content.col-md-12
+    h1 정산목록
+    .lead 매주 금요일에 지난주(월요일~일요일) 이용 건에 대해 입금해 드립니다.
+    .py-2
+    .card      
+      .card-body
+        .btn-group.colors(data-toggle='buttons')
+          label.btn.btn-primary.active
+            input(type='radio', name='options', value='red', autocomplete='off', checked='')
+            | 전체
+          label.btn.btn-primary
+            input(type='radio', name='options', value='orange', autocomplete='off')
+            | 정산대기
+          label.btn.btn-primary
+            input(type='radio', name='options', value='yellow', autocomplete='off')
+            | 정산완료          
+        .py-2       
+        .form-row
+          .col-md-6
+            .input-group
+              h6.mr-2.my-2 지급일
+              input.form-control(type='date', value='2017-12-01')
+              span.input-group-addon 부터
+              input.form-control(type='date', value='2017-12-31')
+              span.input-group-addon 까지
+          .col-md-4
+            .btn-group              
+              button.btn.btn-primary(type='button') 최근 1개월
+              button.btn.btn-light(type='button') 최근 6개월
+              button.btn.btn-light(type='button') 최근 1년
+    .py-4
+
+    h3
+      | 정산조회
+      small.text-muted.ml-2 20건
+    
+    table.table.table-hover
+      thead
+        tr
+          th 지급일
+          th 기간
+          th 총 결제금액
+          th 정산금액
+          th 판매건수
+          th 정산상태   
+      tbody.cursor-pointer
+        tr(data-toggle='modal', data-id='1', data-target='#exampleModal')
+          td 2017-10-13 (금)
+          td 2017-10-02 (월) ~ 2017-09-24 (일)
+          td 460,000
+          td 391,000
+          td 4건
+          td.text-primary 정산대기
+        tr(data-toggle='modal', data-id='1', data-target='#exampleModal')
+          td 2017-10-13 (금)
+          td 2017-10-02 (월) ~ 2017-09-24 (일)
+          td 460,000
+          td 391,000
+          td 4건
+          td 정산완료
+
+    nav.mt-5
+      ul.pagination.justify-content-center
+        li.page-item.disabled
+          a.page-link(href='#', tabindex='-1') 처음으로 
+        li.page-item.disabled
+          a.page-link(href='#')
+            i.fa.fa-angle-left
+        li.page-item.active
+          a.page-link(href='#') 1
+        li.page-item
+          a.page-link(href='#') 2
+        li.page-item
+          a.page-link(href='#') 3
+        li.page-item
+          a.page-link(href='#')
+            i.fa.fa-angle-right
+        li.page-item
+          a.page-link(href='#') 마지막으로
+
+    //- Modal
+    #exampleModal.modal.fade(tabindex='-1', role='dialog')
+      .modal-dialog.modal-lg(role='document')
+        .modal-content
+          .modal-header
+            h5#exampleModalLabel.modal-title 
+              | 판매내역              
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+          .modal-body            
+            h2.text-center.py-4 2017-10-02 (월) ~ 2017-10-08 (일)            
+            .py-2
+
+            table.table
+              thead
+                tr
+                  th.text-center 총 결제금액
+                  th.text-center 중계 수수료
+                    span.text-muted (15.00%)
+                  th.text-center 최종 정산금액
+              tbody
+                tr
+                  td.text-center 460,000원
+                  td.text-center -690,000원
+                  td.text-center 391,000원
+            h3.text-center.py-4 판매목록 (4건)
+            table.table.table-hover
+              thead
+                tr
+                  th 판매일시
+                  th 판매채널
+                  th 객실명
+                  th 고객명
+                  th 입실일
+                  th 판매금액                  
+                  th 정산금액
+              tbody
+                tr(data-toggle='collapse', data-target='#collapse1')
+                  td 
+                    | 2017-10-01
+                    br
+                    | 17:36
+                  td NAVER
+                  td 아스토리아
+                  td 아이유
+                  td 2017-10-03(1박)
+                  td 110,000
+                  td 93,500                
+                tr(data-toggle='collapse', data-target='#collapse1')
+                  td 
+                    | 2017-10-03
+                    br
+                    | 16:19
+                  td TMON
+                  td 맨하탄
+                  td 서태지
+                  td 2017-10-03(1박)
+                  td 110,000
+                  td 93,500                
+            #collapse1.collapse
+              .card.bg-light
+                .card-body
+                  .row
+                    .col
+                      dl.title-right
+                        .row
+                          dt.col 판매상태
+                          dd.col 판매완료
+                        .row
+                          dt.col 판매일시
+                          dd.col 2017-10-01 17:36
+                        .row
+                          dt.col 숙소명
+                          dd.col 제이의 테스트숲속펜션
+                        .row
+                          dt.col 판매사 예약번호
+                          dd.col 네이버 10842808
+                        .row
+                          dt.col 티포트 예약번호
+                          dd.col NV-OX4YKQ3TO
+                        .row
+                          dt.col 공급사 예약번호
+                          dd.col 1567472
+                    .col
+                      dl.title-right
+                        .row
+                          dt.col 고객정보
+                          dd.col 최희수 01020206749
+                        .row
+                          dt.col 상품명
+                          dd.col 아스토리아
+                        .row
+                          dt.col 사용기간
+                          dd.col 2017-10-03 (1박)
+                        .row
+                          dt.col 이용인원
+                          dd.col 성인2, 유아0, 영아0
+                        .row
+                          dt.col 결제금액
+                          dd.col 110,000원
+                        .row
+                          dt.col 결산금액
+                          dd.col 93,500
+            
+          .modal-footer              
+            button.btn.btn-secondary(type='button', data-dismiss='modal') 닫기            

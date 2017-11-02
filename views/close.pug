@@ -1,0 +1,278 @@
+include includes/header.pug
+.row.no-gutters
+  #content.col-md-12
+    
+    .row
+      .col-lg-3
+        h1 방막기
+      .col-lg-6
+        .d-flex.justify-content-center
+          h1
+            button.btn.btn-light.btn-white.btn-lg(type='button')
+              i.fa.fa-angle-left.fa-2x
+            | 2017년
+            button#dropdownMenuButton1.btn.btn-light.btn-white.btn-lg.dropdown-toggle(type='button', data-toggle='dropdown',aria-haspopup="true" aria-expanded="false")
+            .dropdown-menu.dropdown-menu-right(aria-labelledby='dropdownMenuButton1')
+              .dropdown-item(href='#') 2017년
+              .dropdown-item(href='#') 2018년
+          h1
+            | 11월
+            button#dropdownMenuButton2.btn.btn-light.btn-white.btn-lg.dropdown-toggle(type='button', data-toggle='dropdown',aria-haspopup="true" aria-expanded="false")
+            .dropdown-menu.dropdown-menu-right(aria-labelledby='dropdownMenuButton2')
+              .dropdown-item(href='#') 1월
+              .dropdown-item(href='#') 2월
+              .dropdown-item(href='#') 3월
+              .dropdown-item(href='#') 4월
+              .dropdown-item(href='#') 5월
+              .dropdown-item(href='#') 6월
+              .dropdown-item(href='#') 7월
+              .dropdown-item(href='#') 8월
+              .dropdown-item(href='#') 9월
+              .dropdown-item(href='#') 10월
+              .dropdown-item(href='#') 11월
+              .dropdown-item(href='#') 12월            
+            button.btn.btn-light.btn-white.btn-lg(type='button')
+              i.fa.fa-angle-right.fa-2x
+    .row
+      .col    
+        .btn-group
+          button.btn.btn-secondary(type='button') 전체선택
+          button.btn.btn-secondary(type='button') 월
+          button.btn.btn-secondary(type='button') 화
+          button.btn.btn-secondary(type='button') 수
+          button.btn.btn-secondary(type='button') 목
+          button.btn.btn-secondary(type='button') 금
+          button.btn.btn-secondary(type='button') 토
+          button.btn.btn-secondary(type='button') 일
+      .col.text-right
+        .btn-group
+          button.btn.btn-secondary(type='button') 1째주
+          button.btn.btn-secondary(type='button') 2째주
+          button.btn.btn-secondary(type='button') 3째주
+          button.btn.btn-secondary(type='button') 4째주
+          button.btn.btn-secondary(type='button') 5째주
+          button.btn.btn-secondary(type='button') 6째주          
+            
+    //- 달력시작
+    table.table-calendar.mt-4
+      thead
+        tr            
+          th 일
+          th 월
+          th 화
+          th 수            
+          th 목
+          th 금
+          th.holiday 토
+          
+      tbody          
+        tr            
+          td.holiday.dimed              
+            .date 26  
+            .other-month 지난달
+          td.dimed
+            .date 27
+            .other-month 지난달
+          td.dimed
+            .date 28
+            .other-month 지난달
+          td.dimed
+            .date 29
+            .other-month 지난달
+          td.dimed
+            .date 30
+            .other-month 지난달    
+          td.past
+            .d-flex
+              .date 1                
+          td.holiday.past
+            .d-flex
+              .date 2
+        tr
+          td.holiday.past              
+            .date 3                
+          td.past              
+            .date 4
+          td
+            .d-flex
+              .date.today 5                
+          td
+            .d-flex
+              .date 6
+            .form-check
+              label.form-check-label
+                input.form-check-input(type='checkbox')                  
+                | 전체객실 선택
+            .form-check
+              label.form-check-label
+                input.form-check-input(type='checkbox')
+                .status.complete
+                | 맨하탄
+            .form-check
+              label.form-check-label
+                input.form-check-input(type='checkbox')
+                .status.available
+                | 스테이튼 아일랜드
+            .form-check
+              label.form-check-label
+                input.form-check-input(type='checkbox')
+                .status.waiting
+                | 브롱스
+            .form-check
+              label.form-check-label
+                input.form-check-input(type='checkbox')
+                .status.callonly
+                | 부르클린
+            .form-check
+              label.form-check-label
+                input.form-check-input(type='checkbox')
+                .status.blocked
+                | 아스토리아
+                span.text-muted.ml-1 (5)             
+          td
+            .date 7              
+          td
+            .date 8
+          td.holiday
+            .date 9
+        tr
+          td.holiday
+            .date 10
+          td.holiday
+            .d-flex
+              .date 11
+              .special-day 빼빼로데이
+          td
+            .date 12
+          td           
+            .date 13
+          td
+            .date 14            
+          td
+            .date 15
+          td.holiday
+            .date 16
+        tr
+          td.holiday
+            .date 17
+          td
+            .date 18
+          td
+            .date 19
+          td
+            .date 20
+          td
+            .date 21
+          td
+            .date 22
+          td.holiday
+            .date 23
+        tr
+          td.holiday
+            .date 24
+          td
+            .date 25
+          td
+            .date 26
+          td
+            .date 27
+          td
+            .date 28            
+          td
+            .date 29
+          td.holiday
+            .date 30
+        tr
+          td.holiday
+            .date 31
+          td.dimed
+            .date 1
+            .other-month 다음달
+          td.dimed
+            .date 2
+            .other-month 다음달
+          td.dimed
+            .date 3
+            .other-month 다음달
+          td.dimed
+            .date 4         
+            .other-month 다음달   
+          td.dimed
+            .date 5
+            .other-month 다음달
+          td.holiday.dimed
+            .date 6
+            .other-month 다음달
+            
+    .mt-4.text-right
+      span.mr-4 
+        strong 아이콘설명
+      .status.available
+      span.mr-4 예약가능
+      .status.waiting
+      span.mr-4 예약대기
+      .status.complete
+      span.mr-4 예약완료
+      .status.callonly
+      span.mr-4 전화문의
+      .status.blocked
+      span.mr-4 방닫힘
+
+    .py-2
+
+    h3 방막기/방열기 변경내역
+    table.table
+      thead
+        tr
+          th 작업
+          th 기간
+          th 객실
+          th 담당자
+          th 변경일시
+      tbody
+        tr
+          th 방열기
+          td 2017-11-01, 2017-11-02, 2017-11-03, 2017-11-04, 2017-11-14
+          td 맨하탄, 스테이튼 아일랜드, 아스토리아, 부르클린, 브롱스
+          td 제이의 테스트 산속펜션
+          td 2017-11-01 11:55:59
+        tr
+          th.text-danger 방막기
+          td 2017-10-31
+          td 맨하탄, 스테이튼 아일랜드
+          td 제이의 테스트 산속펜션
+          td 2017-10-31 17:48:05
+
+    .py-5.my-5
+    
+    .text-center.fixed-bottom.mb-5.block-btns
+      button.btn.btn-primary.py-3.px-5.mx-1(type='button', data-toggle='modal', data-id='1', data-target='#exampleModal')
+        h3 방막기
+        div 판매 마감
+      button.btn.btn-secondary.py-3.px-5.mx-1(type='button', data-dismiss='modal', onclick= 'swal("객실이 하나도 선택되지 않았습니다.", "객실을 먼저 선택하여 주시기 바랍니다.","error")')
+        h3 방열기
+        div 판매 시작
+  
+    //- Modal: 방막기
+    #exampleModal.modal.fade(tabindex='-1', role='dialog')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            h5#exampleModalLabel.modal-title 
+              | 방막기
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+          .modal-body
+            .form-group
+              label 방막기 메모
+              input.form-control(type='text', value='')
+            .form-check
+              label.form-check-label
+                input.form-check-input(type='checkbox')                  
+                | 전화문의를 통한 예약만 받습니다.
+            
+          .modal-footer               
+            button.btn.btn-secondary(type='button', data-dismiss='modal') 취소
+            button.btn.btn-primary(type='button') 저장하기
+      
+        

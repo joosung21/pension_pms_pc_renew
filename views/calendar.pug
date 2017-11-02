@@ -4,11 +4,7 @@ include includes/header.pug
     
     .row
       .col-lg-3
-        .btn-group
-          button.btn.btn-light(type='button') 한달 전
-          button.btn.btn-light(type='button') 오늘
-          button.btn.btn-light(type='button') 한달 후
-          button.btn.btn-light(type='button') 두달 후
+        h1 객실달력
       .col-lg-6
         .d-flex.justify-content-center
           h1
@@ -42,226 +38,226 @@ include includes/header.pug
         button.btn.btn-light.mr-2(type='button')
           i.fa.fa-krw.fa-lg.mr-1
           span 요금보기
-        button.btn.btn-light(type='button')
-          i.fa.fa-tasks.fa-lg.mr-2            
-          span 차트로 보기      
+        //- button.btn.btn-light(type='button')
+        //-   i.fa.fa-tasks.fa-lg.mr-2            
+        //-   span 차트로 보기
       
-      //- 달력시작
-      table.table-calendar.mt-4
-        thead
-          tr
-            th.holiday 일
-            th 월
-            th 화
-            th 수
-            th 목
-            th 금
-            th.holiday 토
-        tbody
-          tr
-            td.holiday.dimed
+    //- 달력시작
+    table.table-calendar.mt-4
+      thead
+        tr
+          th.holiday 일
+          th 월
+          th 화
+          th 수
+          th 목
+          th 금
+          th.holiday 토
+      tbody
+        tr
+          td.holiday.dimed
+            .d-flex
+              .date 26                
+            .other-month 지난달
+          td.dimed
+            .date 27
+            .other-month 지난달
+          td.dimed
+            .date 28
+            .other-month 지난달
+          td.dimed
+            .date 29
+            .other-month 지난달
+          td.dimed
+            .date 30
+            .other-month 지난달    
+          td.past
+            .d-flex
+              .date 1
+              .season.ml-auto 비수기
+          td.holiday.past
+            .d-flex
+              .date 2
+              .season.ml-auto 비수기
+        tr
+          td.holiday.past
+            .d-flex
+              .date 3
+              .season.ml-auto 비수기
+          td.past
+            .d-flex
+              .date 4
+              .season.ml-auto 비수기
+          td
+            .d-flex
+              .date.today 5
+              .season.ml-auto 비수기
+          td
+            .d-flex
+              .date 6
+              .season.ml-auto 비수기              
+            .room(data-toggle='modal', data-id='1', data-target='#exampleModal')
               .d-flex
-                .date 26                
-              .other-month 지난달
-            td.dimed
-              .date 27
-              .other-month 지난달
-            td.dimed
-              .date 28
-              .other-month 지난달
-            td.dimed
-              .date 29
-              .other-month 지난달
-            td.dimed
-              .date 30
-              .other-month 지난달    
-            td.past
-              .d-flex
-                .date 1
-                .season.ml-auto 비수기
-            td.holiday.past
-              .d-flex
-                .date 2
-                .season.ml-auto 비수기
-          tr
-            td.holiday.past
-              .d-flex
-                .date 3
-                .season.ml-auto 비수기
-            td.past
-              .d-flex
-                .date 4
-                .season.ml-auto 비수기
-            td
-              .d-flex
-                .date.today 5
-                .season.ml-auto 비수기
-            td
-              .d-flex
-                .date 6
-                .season.ml-auto 비수기              
-              .room(data-toggle='modal', data-id='1', data-target='#exampleModal')
-                .d-flex
-                  .status.complete
-                  .roomname 맨하탄
-                .price 120,000원
-              .room(data-toggle='modal', data-id='2', data-target='#exampleModal2')
-                .d-flex
-                  .status.available
-                  .roomname 스테이튼 아일랜드
-                .price 120,000원
-              .room
-                .d-flex
-                  .status.available
-                  .roomname 브롱스
-                .price 120,000원                
-              .room
-                .d-flex
-                  .status.available
-                  .roomname 부르클린
-                .price 240,000원
-                
-              .room(data-toggle='collapse', data-target='#collapse2')
-                .d-flex
-                  .status.available
-                  .roomname 아스토리아
-                  .text-stock.ml-auto 4/5
-                .price 240,000원
-
-              #collapse2.collapse
-                .stock
-                  a.complete(href='#') 조
-                  a.complete(href='#') 김
-                  a.complete(href='#') ki
-                  a.complete(href='#') 최
-                  a.available(href='#') &nbsp;
-            td
-              .d-flex              
-                .date 7            
-                .season.ml-auto 비수기              
-            td
-              .d-flex
-                .date 8
-                .season.ml-auto 비수기
-            td.holiday
-              .d-flex
-                .date 9
-                .season.ml-auto 비수기
-          tr
-            td.holiday
-              .d-flex           
-                .date 10
-                .season.ml-auto 비수기           
-            td.holiday
-              .d-flex
-                .date 11
-                .special-day 빼빼로데이
-                .season.ml-auto 비수기
-            td
-              .d-flex
-                .date 12
-                .season.ml-auto 비수기     
-            td
-              .d-flex              
-                .date 13            
-                .season.ml-auto 비수기
-              .room.d-flex
-                .status.waiting
+                .status.complete
                 .roomname 맨하탄
-              .room.d-flex
-                .status.callonly
+              .price 120,000원
+            .room(data-toggle='modal', data-id='2', data-target='#exampleModal2')
+              .d-flex
+                .status.available
                 .roomname 스테이튼 아일랜드
-                .text-stock.ml-auto
-              .room.d-flex
-                .status.blocked
+              .price 120,000원
+            .room
+              .d-flex
+                .status.available
                 .roomname 브롱스
-                .text-stock.ml-auto
-              .room.d-flex
+              .price 120,000원                
+            .room
+              .d-flex
                 .status.available
                 .roomname 부르클린
-                .text-stock.ml-auto
-              .room.d-flex(data-toggle='collapse', data-target='#collapse3')
+              .price 240,000원
+              
+            .room(data-toggle='collapse', data-target='#collapse2')
+              .d-flex
                 .status.available
                 .roomname 아스토리아
-                .text-stock.ml-auto 1/5
-              #collapse3.collapse
-                .stock
-                  a.waiting(href='#') 심
-                  a.callonly(href='#')
-                  a.blocked(href='#')
-                  a.available(href='#') &nbsp;
-                  a.available(href='#') &nbsp;
-            td
-              .date 14            
-            td
-              .date 15
-            td.holiday
-              .date 16
-          tr
-            td.holiday
-              .date 17
-            td
-              .date 18
-            td
-              .date 19
-            td
-              .date 20
-            td
-              .date 21
-            td
-              .date 22
-            td.holiday
-              .date 23
-          tr
-            td.holiday
-              .date 24
-            td
-              .date 25
-            td
-              .date 26
-            td
-              .date 27
-            td
-              .date 28            
-            td
-              .date 29
-            td.holiday
-              .date 30
-          tr
-            td.holiday
-              .date 31
-            td.dimed
-              .date 1
-              .other-month 다음달
-            td.dimed
-              .date 2
-              .other-month 다음달
-            td.dimed
-              .date 3
-              .other-month 다음달
-            td.dimed
-              .date 4         
-              .other-month 다음달   
-            td.dimed
-              .date 5
-              .other-month 다음달
-            td.holiday.dimed
-              .date 6
-              .other-month 다음달
-            
-      .mt-4
-        span.mr-4 
-          strong 아이콘설명
-        .status.available
-        span.mr-4 예약가능
-        .status.waiting
-        span.mr-4 예약대기
-        .status.complete
-        span.mr-4 예약완료
-        .status.callonly
-        span.mr-4 전화문의
-        .status.blocked
-        span.mr-4 방닫힘
+                .text-stock.ml-auto 4/5
+              .price 240,000원
+
+            #collapse2.collapse
+              .stock
+                a.complete(href='#') 조
+                a.complete(href='#') 김
+                a.complete(href='#') ki
+                a.complete(href='#') 최
+                a.available(href='#') &nbsp;
+          td
+            .d-flex              
+              .date 7            
+              .season.ml-auto 비수기              
+          td
+            .d-flex
+              .date 8
+              .season.ml-auto 비수기
+          td.holiday
+            .d-flex
+              .date 9
+              .season.ml-auto 비수기
+        tr
+          td.holiday
+            .d-flex           
+              .date 10
+              .season.ml-auto 비수기           
+          td.holiday
+            .d-flex
+              .date 11
+              .special-day 빼빼로데이
+              .season.ml-auto 비수기
+          td
+            .d-flex
+              .date 12
+              .season.ml-auto 비수기     
+          td
+            .d-flex              
+              .date 13            
+              .season.ml-auto 비수기
+            .room.d-flex
+              .status.waiting
+              .roomname 맨하탄
+            .room.d-flex
+              .status.callonly
+              .roomname 스테이튼 아일랜드
+              .text-stock.ml-auto
+            .room.d-flex
+              .status.blocked
+              .roomname 브롱스
+              .text-stock.ml-auto
+            .room.d-flex
+              .status.available
+              .roomname 부르클린
+              .text-stock.ml-auto
+            .room.d-flex(data-toggle='collapse', data-target='#collapse3')
+              .status.available
+              .roomname 아스토리아
+              .text-stock.ml-auto 1/5
+            #collapse3.collapse
+              .stock
+                a.waiting(href='#') 심
+                a.callonly(href='#')
+                a.blocked(href='#')
+                a.available(href='#') &nbsp;
+                a.available(href='#') &nbsp;
+          td
+            .date 14            
+          td
+            .date 15
+          td.holiday
+            .date 16
+        tr
+          td.holiday
+            .date 17
+          td
+            .date 18
+          td
+            .date 19
+          td
+            .date 20
+          td
+            .date 21
+          td
+            .date 22
+          td.holiday
+            .date 23
+        tr
+          td.holiday
+            .date 24
+          td
+            .date 25
+          td
+            .date 26
+          td
+            .date 27
+          td
+            .date 28            
+          td
+            .date 29
+          td.holiday
+            .date 30
+        tr
+          td.holiday
+            .date 31
+          td.dimed
+            .date 1
+            .other-month 다음달
+          td.dimed
+            .date 2
+            .other-month 다음달
+          td.dimed
+            .date 3
+            .other-month 다음달
+          td.dimed
+            .date 4         
+            .other-month 다음달   
+          td.dimed
+            .date 5
+            .other-month 다음달
+          td.holiday.dimed
+            .date 6
+            .other-month 다음달
+          
+    .mt-4.text-right
+      span.mr-4 
+        strong 아이콘설명
+      .status.available
+      span.mr-4 예약가능
+      .status.waiting
+      span.mr-4 예약대기
+      .status.complete
+      span.mr-4 예약완료
+      .status.callonly
+      span.mr-4 전화문의
+      .status.blocked
+      span.mr-4 방닫힘
         
         
     //- Modal: 예약조회

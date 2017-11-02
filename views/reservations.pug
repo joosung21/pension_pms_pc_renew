@@ -1,6 +1,7 @@
 include includes/header.pug
 .row.no-gutters
   #content.col-md-12
+    h1 예약목록
     .card
       .card-header 예약검색
       .card-body
@@ -35,19 +36,18 @@ include includes/header.pug
               button.btn.btn-light(type='button') 어제
               button.btn.btn-light(type='button') 오늘
               button.btn.btn-light(type='button') 최근한주
-              button.btn.btn-light(type='button') 최근한달
+              button.btn.btn-primary(type='button') 최근한달
         .py-1
-        .input-group
-          input.form-control(type='text', placeholder='예약자명 또는 연락처 검색')
-          span.input-group-btn
-            button.btn.btn-light.border(type='button')
-              i.fa.fa-times.fa-lg
-              span.pl-1 검색어 삭제
-          span.input-group-btn
-            button.btn.btn-primary(type='button')
-              i.fa.fa-search.fa-lg
-              span.pl-1 검색
-    
+        .form-row
+          .col-md-6
+            .input-group
+              input.form-control(type='text', placeholder='예약자명 또는 연락처 검색')   
+              span.input-group-btn
+                button.btn.btn-secondary(type='button')
+                  i.fa.fa-search.fa-lg
+                  span.pl-1 검색
+          .col-md-6
+            button.btn.btn-light(type='button') 검색어 삭제
     .py-4
 
     h3
@@ -177,17 +177,24 @@ include includes/header.pug
           td 예약완료
 
     nav.mt-5
-      ul.pagination.pagination-lg.justify-content-center
+      ul.pagination.justify-content-center
         li.page-item.disabled
-          a.page-link(href='#', tabindex='-1') Previous
-        li.page-item
+          a.page-link(href='#', tabindex='-1') 처음으로 
+        li.page-item.disabled
+          a.page-link(href='#')
+            i.fa.fa-angle-left
+        li.page-item.active
           a.page-link(href='#') 1
         li.page-item
           a.page-link(href='#') 2
         li.page-item
           a.page-link(href='#') 3
         li.page-item
-          a.page-link(href='#') Next
+          a.page-link(href='#')
+            i.fa.fa-angle-right
+        li.page-item
+          a.page-link(href='#') 마지막으로
+            
 
     //- Modal
     #exampleModal.modal.fade(tabindex='-1', role='dialog')

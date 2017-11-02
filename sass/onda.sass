@@ -3,7 +3,7 @@ $creamblue: #4C9BD3
 $green: #79C732
 $red: #FC4948
 $yellow: #FDC62D
-$gray: #D2D2D2
+$gray: #D2D4D6
 $dark: #343C44
 
 
@@ -25,6 +25,10 @@ body
 .btn-white
   background-color: white
   border-color: white
+
+dl.title-right
+  dt
+    text-align: right
 
 table
   &.table-vertical-middle
@@ -137,9 +141,10 @@ table.table-calendar
   tbody td
     position: relative
     border: 1px solid #dddddd  
-    width: 14.25vw
+    width: 14.25%
     vertical-align: top
     padding: 0.5rem
+    transition: all .3s
     &.dimed::after
       width: 100%
       height: 100%
@@ -147,17 +152,11 @@ table.table-calendar
       position: absolute
       left: 0
       top: 0
-      background-color: #eeeeee
+      background-color: #eeeff3
       opacity: .7
-    &.past::after
-      width: 100%
-      height: 100%
-      content: ' '
-      position: absolute
-      left: 0
-      top: 0
-      background-color: white
-      opacity: .7
+    &.past      
+      opacity: .3
+                    
     .date
       font-weight: 500
       font-size: 14pt
@@ -182,7 +181,7 @@ table.table-calendar
       cursor: default
       padding: .4rem 0
       &:hover
-        background-color: #f1f1f1
+        background-color: #f1f1f1      
       .price
         text-align: right
         font-size: 14pt
@@ -258,3 +257,6 @@ table.table-calendar
       content: "\f05e"
       font-family: FontAwesome     
             
+.block-btns
+  button:hover
+    box-shadow: 0px 5px 1rem rgba(0,0,0,0.3)

@@ -16,6 +16,12 @@ app.get('/reservations', function (req, res){res.render('reservations')})
 // 객실목록
 app.get('/calendar', function (req, res){res.render('calendar')})
 
+// 방막기
+app.get('/close', function (req, res){res.render('close')})
+
+// 방막기
+app.get('/transaction', function (req, res){res.render('transaction')})
+
 // 판매 환경설정
 app.get('/setting/rooms', function (req, res){res.render('setting/rooms')})
 app.get('/setting/rooms/edit', function (req, res){res.render('setting/room-edit')})
