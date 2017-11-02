@@ -1,0 +1,18 @@
+include includes/header.pug
+
+.container
+  .py-5
+
+  .row.justify-content-md-center
+    .col-lg-4
+      .display-4.pb-4 로그인
+      .form-group
+        label 이메일주소
+        input.form-control.form-control-lg(type='email')
+      .form-group
+        label 비밀번호
+        input.form-control.form-control-lg(type='password')
+      button.btn.btn-lg.btn-primary.btn-block(type='button', onclick='location.href="/"') 로그인
+
+      .text-center.mt-2
+        button.btn.btn-link(type='button') 비밀번호 찾기

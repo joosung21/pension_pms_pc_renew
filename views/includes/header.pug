@@ -23,38 +23,3 @@ html(lang="en")
 
   //- Start BODY
   body
-    
-    //- Start Topbar
-    #topbar.row.no-gutters
-      .col-lg-8.d-md-flex
-        a#title.nav(href='/reservations') 제이의 뉴욕펜션
-        input#search(type='text', placeholder='예약검색')
-        a.nav(href='/reservations', data-toggle='tooltip', data-placement='bottom', title='예약목록')
-          i.fa.fa-reorder.fa-2x          
-        a.nav(href='/calendar', data-toggle='tooltip', data-placement='bottom', title='객실달력')
-          i.fa.fa-calendar.fa-2x      
-        a.nav(href='/close', data-toggle='tooltip', data-placement='bottom', title='방막기')
-          i.fa.fa-calendar-times-o.fa-2x
-        a.nav(href='/transaction', data-toggle='tooltip', data-placement='bottom', title='정산목록')
-          i.fa.fa-krw.fa-2x
-      .col-lg-4.d-flex
-        a.nav.ml-auto(href='#', data-toggle='tooltip', data-placement='bottom', title='실시간 예약창')
-          i.fa.fa-desktop.fa-2x.mr-1          
-        a.nav.active(href='/setting/business', data-toggle='tooltip', data-placement='bottom', title='설정')
-          i.fa.fa-gear.fa-2x.mr-1
-        .dropdown.show
-          a.nav(href='#', role='button', id='dropdownUser', data-toggle='dropdown', aria-haspopiup='true', aria-expanded='false')
-            i.fa.fa-user.fa-2x
-            span 안주성
-            i.fa.fa-angle-down.ml-2
-          .dropdown-menu(aria-labelledby='dropdownUser')
-            .px-4
-              small.text-muted 언어선택
-            a.dropdown-item(href='#') English
-            a.dropdown-item(href='#') 한국어
-            .dropdown-divider
-            a.dropdown-item(href='#') 도움말
-            a.dropdown-item(href='#') 공지사항
-            a.dropdown-item(href='#') 문의 &amp; 수정요청
-            .dropdown-divider
-            a.dropdown-item(href='#') 로그아웃

@@ -10,6 +10,9 @@ app.use('/assets/', express.static('assets'))
 // 기본라우팅
 app.get('/', function (req, res){res.render('reservations')})
 
+// 로그인
+app.get('/login', function (req, res){res.render('login')})
+
 // 예약목록
 app.get('/reservations', function (req, res){res.render('reservations')})
 
