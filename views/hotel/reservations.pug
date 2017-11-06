@@ -1,0 +1,123 @@
+include ../includes/header.pug
+include ../includes/topbar-hotel.pug
+
+.row.no-gutters
+  #content.col-md-12
+    h1.mb-4 예약목록
+    .card      
+      .card-body
+        .btn-group.colors(data-toggle='buttons')
+          label.btn.btn-primary.active
+            input(type='radio', name='options', value='red', autocomplete='off', checked='')
+            | 모든예약          
+          label.btn.btn-primary
+            input(type='radio', name='options', value='yellow', autocomplete='off')
+            | 판매완료
+          label.btn.btn-primary
+            input(type='radio', name='options', value='yellow', autocomplete='off')
+            | 판매취소
+        .py-2
+        .form-row
+          .col-md-2
+            .form-group
+              select.form-control
+                option 결제일시
+                option 체크인
+                option 체크아웃
+          .col-md-6
+            .input-group
+              input.form-control(type='date', value='2017-10-30')
+              span.input-group-addon 부터
+              input.form-control(type='date', value='2017-10-30')
+              span.input-group-addon 까지
+          .col-md-4
+            .btn-group
+              button.btn.btn-light(type='button') 어제
+              button.btn.btn-primary(type='button') 오늘
+              button.btn.btn-light(type='button') 최근한주
+              button.btn.btn-light(type='button') 최근한달
+        .py-1
+        .form-row
+          .col-md-6
+            .input-group
+              input.form-control(type='text', placeholder='예약자명 또는 연락처 검색')   
+              span.input-group-btn
+                button.btn.btn-secondary(type='button')
+                  i.fa.fa-search.fa-lg
+                  span.pl-1 검색
+          .col-md-6
+            button.btn.btn-light(type='button') 검색어 삭제
+    .py-4
+
+    h3
+      | 예약조회
+      small.text-muted.ml-2 7건
+    
+    table.table.table-reservation
+      thead
+        tr
+          th 결제일시 
+          th 객실명
+          th 예약자
+          th 체크인
+          th 체크아웃
+          th 박수
+          th 판매가
+          th 입금가          
+          th 상태         
+      tbody
+        tr.canceled
+          td
+            | 2017-10-30 (월)            
+            br
+            | 20:41
+          td SUPERIOR ROOM (트윈)
+          td 
+            | 김효정
+            br
+            | 010-321-2233
+          td 2017-11-03 (금)
+          td 2017-11-04 (토)
+          td 1박
+          td 100,000
+          td 90,000          
+          td
+            | 판매취소
+            .small 2017-11-02 20:41
+            .small 1일전 취소, 10% 환불
+        tr
+          td
+            | 2017-10-30 (월)            
+            .small 20:41
+          td SUPERIOR ROOM (더블)
+          td 
+            | 이진화
+            .small 010-321-2233
+          td 2017-11-03 (금)
+          td 2017-11-04 (토)
+          td 1박
+          td 100,000
+          td 90,000          
+          td 판매완료
+
+          
+          
+
+    nav.mt-5
+      ul.pagination.justify-content-center
+        li.page-item.disabled
+          a.page-link(href='#', tabindex='-1') 처음으로 
+        li.page-item.disabled
+          a.page-link(href='#')
+            i.fa.fa-angle-left
+        li.page-item.active
+          a.page-link(href='#') 1
+        li.page-item
+          a.page-link(href='#') 2
+        li.page-item
+          a.page-link(href='#') 3
+        li.page-item
+          a.page-link(href='#')
+            i.fa.fa-angle-right
+        li.page-item
+          a.page-link(href='#') 마지막으로

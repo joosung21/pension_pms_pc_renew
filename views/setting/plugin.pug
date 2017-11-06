@@ -14,14 +14,11 @@ include ../includes/topbar.pug
         p.pb-4 홈페이지에 삽입하여 이용할 수 있는 팝업형 실시간예약창 입니다. 무통장입금, 카드결제로 예약금을 결제받을 수 있고 예약이 발행하면 문자메시지 알림을 받을 수 있습니다.
         
 
-        .btn-group(role='group')
-          button.btn.btn-success(type='button') 실시간예약창 ON
-          button.btn.btn-light(type='button') OFF
-        
-        //- If switch is off
-        //- .btn-group(role='group')
-        //-   button.btn.btn-light(type='button') 실시간예약창 ON
-        //-   button.btn.btn-secondary(type='button') OFF
+        .d-flex.align-items-center
+          h5.mr-3 실시간예약창 켜기/끄기
+          label.switch
+            input(type='checkbox', checked)
+            span.slider.round
 
         .py-4
         .form-group

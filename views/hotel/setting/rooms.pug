@@ -1,0 +1,64 @@
+include ../../includes/header.pug
+include ../../includes/topbar-hotel.pug
+
+.row.no-gutters
+  include ../../includes/leftside-hotel.pug
+
+  #content.col-md-8.col-lg-9.col-xl-10
+    .row.no-gutters
+      .col-md-10.col-xl-8
+        h1 객실관리
+        .lead.mb-5 객실타입별 기본정보를 수정할 수 있고, 드래그하여 순서를 변경할 수도 있습니다.
+        table.table.table-hover.table-vertical-middle.table-reorderable
+          thead
+            tr
+              th(scope='col') 순서
+              th(scope='col') 객실명              
+              th(scope='col') 재고수
+              th(scope='col') 기준/최대인원
+              th(scope='col') 상태
+              th          
+          tbody
+            tr
+              th 01
+              td SUPERIOR ROOM (더블)
+              td 10
+              td 2/4 명
+              td.text-muted 미판매 
+              td
+                button.btn.btn-secondary.btn-sm(type='button', onclick='location.href="/hotel/setting/rooms/edit"') 수정       
+            tr
+              th 02
+              td SUPERIOR ROOM (트윈)
+              td 10
+              td 2/4 명
+              td 판매
+              td
+                button.btn.btn-secondary.btn-sm(type='button', onclick='location.href="/hotel/setting/rooms/edit"') 수정       
+            tr
+              th 03
+              td DELUXE ROOM (더블)
+              td 10
+              td 2/4 명
+              td 판매 
+              td
+                button.btn.btn-secondary.btn-sm(type='button', onclick='location.href="/hotel/setting/rooms/edit"') 수정       
+            tr
+              th 04
+              td DELUXE ROOM (트윈)
+              td 10
+              td 2/4 명
+              td 판매
+              td
+                button.btn.btn-secondary.btn-sm(type='button', onclick='location.href="/hotel/setting/rooms/edit"') 수정       
+            tr
+              th 05
+              td JR SUITE ROOM
+              td 10
+              td 2/4 명
+              td 판매 
+              td
+                button.btn.btn-secondary.btn-sm(type='button', onclick='location.href="/hotel/setting/rooms/edit"') 수정
+
+        button.btn.btn-primary(type='button', onclick='location.href="/hotel/setting/rooms/edit"')          
+          span 새로운 객실추가

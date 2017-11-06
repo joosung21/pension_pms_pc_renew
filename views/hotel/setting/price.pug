@@ -1,0 +1,288 @@
+include ../../includes/header.pug
+include ../../includes/topbar-hotel.pug
+
+.row.no-gutters
+  include ../../includes/leftside-hotel.pug
+  
+  #content.col-md-8.col-lg-9.col-xl-10
+    .row.no-gutters
+      .col-md-12.col-xl-10
+        h1 기본요금
+        .lead.mb-5 기준이 되는 객실요금을 설정합니다.
+
+        .card.mb-5
+          .card-body
+            .form-row
+              .col-2
+                strong 정산방식
+              .col-4 입금가 기준
+              .col-2 
+                strong 계약수수료
+              .col-4 10%
+
+        .card.mb-5
+          .card-body
+            .row
+              .col-lg-8
+                h3.mb-0
+                  | SUPERIOR ROOM (더블)
+                  small.text-muted.ml-4 2~4명
+              .col-lg-4
+                .input-group
+                  input.form-control.ml-auto.text-right(type='text', value='')
+                  span.input-group-btn
+                    button.btn.btn-secondary 일괄적용
+            hr
+            table.price-table
+              thead
+                tr
+                  th
+                  th 일
+                  th 월
+                  th 화
+                  th 수
+                  th 목
+                  th 금
+                  th 
+                    | 토
+                    small.text-muted.ml-1 공휴일전날
+              tbody
+                tr
+                  th 입금가
+                  td 
+                    input.form-control(type='text', value='200,000')
+                  td 
+                    input.form-control(type='text', value='200,000')
+                  td 
+                    input.form-control(type='text', value='200,000')
+                  td 
+                    input.form-control(type='text', value='200,000')
+                  td 
+                    input.form-control(type='text', value='200,000')
+                  td 
+                    input.form-control(type='text', value='220,000')
+                  td 
+                    input.form-control(type='text', value='240,000')                  
+                tr
+                  th.text-muted 판매가
+                  td.text-muted 220,000
+                  td.text-muted 220,000
+                  td.text-muted 220,000
+                  td.text-muted 220,000
+                  td.text-muted 220,000
+                  td.text-muted 232,000
+                  td.text-muted 264,000
+        .card.mb-5
+          .card-body
+            .row
+              .col-lg-8
+                h3.mb-0
+                  | SUPERIOR ROOM (트윈)
+                  small.text-muted.ml-4 2~4명
+              .col-lg-4
+                .input-group
+                  input.form-control.ml-auto.text-right(type='text', value='')
+                  span.input-group-btn
+                    button.btn.btn-secondary 일괄적용
+            hr
+            table.price-table
+              thead
+                tr
+                  th
+                  th 일
+                  th 월
+                  th 화
+                  th 수
+                  th 목
+                  th 금
+                  th 
+                    | 토
+                    small.text-muted.ml-1 공휴일전날
+              tbody
+                tr
+                  th 입금가
+                  td 
+                    input.form-control(type='text', value='')
+                  td 
+                    input.form-control(type='text', value='')
+                  td 
+                    input.form-control(type='text', value='')
+                  td 
+                    input.form-control(type='text', value='')
+                  td 
+                    input.form-control(type='text', value='')
+                  td 
+                    input.form-control(type='text', value='')
+                  td 
+                    input.form-control(type='text', value='')
+                tr
+                  th.text-muted 판매가
+                  td.text-muted -
+                  td.text-muted -
+                  td.text-muted -
+                  td.text-muted -
+                  td.text-muted -
+                  td.text-muted -
+                  td.text-muted -
+        .card.mb-5
+          .card-body
+            .row
+              .col-lg-8
+                h3.mb-0
+                  | DELUXE ROOM (더블)
+                  small.text-muted.ml-4 2~4명
+              .col-lg-4
+                .input-group
+                  input.form-control.ml-auto.text-right(type='text', value='')
+                  span.input-group-btn
+                    button.btn.btn-secondary 일괄적용
+            hr
+            table.price-table
+              thead
+                tr
+                  th
+                  th 일
+                  th 월
+                  th 화
+                  th 수
+                  th 목
+                  th 금
+                  th 
+                    | 토
+                    small.text-muted.ml-1 공휴일전날
+              tbody
+                tr
+                  th 입금가
+                  td 
+                    input.form-control(type='text', value='')
+                  td 
+                    input.form-control(type='text', value='')
+                  td 
+                    input.form-control(type='text', value='')
+                  td 
+                    input.form-control(type='text', value='')
+                  td 
+                    input.form-control(type='text', value='')
+                  td 
+                    input.form-control(type='text', value='')
+                  td 
+                    input.form-control(type='text', value='')
+                tr
+                  th.text-muted 판매가
+                  td.text-muted -
+                  td.text-muted -
+                  td.text-muted -
+                  td.text-muted -
+                  td.text-muted -
+                  td.text-muted -
+                  td.text-muted -
+        .card.mb-5
+          .card-body
+            .row
+              .col-lg-8
+                h3.mb-0
+                  | DELUXE ROOM (트윈)
+                  small.text-muted.ml-4 2~4명
+              .col-lg-4
+                .input-group
+                  input.form-control.ml-auto.text-right(type='text', value='')
+                  span.input-group-btn
+                    button.btn.btn-secondary 일괄적용
+            hr
+            table.price-table
+              thead
+                tr
+                  th
+                  th 일
+                  th 월
+                  th 화
+                  th 수
+                  th 목
+                  th 금
+                  th 
+                    | 토
+                    small.text-muted.ml-1 공휴일전날
+              tbody
+                tr
+                  th 입금가
+                  td 
+                    input.form-control(type='text', value='')
+                  td 
+                    input.form-control(type='text', value='')
+                  td 
+                    input.form-control(type='text', value='')
+                  td 
+                    input.form-control(type='text', value='')
+                  td 
+                    input.form-control(type='text', value='')
+                  td 
+                    input.form-control(type='text', value='')
+                  td 
+                    input.form-control(type='text', value='')
+                tr
+                  th.text-muted 판매가
+                  td.text-muted -
+                  td.text-muted -
+                  td.text-muted -
+                  td.text-muted -
+                  td.text-muted -
+                  td.text-muted -
+                  td.text-muted -
+        .card.mb-5
+          .card-body
+            .row
+              .col-lg-8
+                h3.mb-0
+                  | JR.SUITE ROOM
+                  small.text-muted.ml-4 2~4명
+              .col-lg-4
+                .input-group
+                  input.form-control.ml-auto.text-right(type='text', value='')
+                  span.input-group-btn
+                    button.btn.btn-secondary 일괄적용
+            hr
+            table.price-table
+              thead
+                tr
+                  th
+                  th 일
+                  th 월
+                  th 화
+                  th 수
+                  th 목
+                  th 금
+                  th 
+                    | 토
+                    small.text-muted.ml-1 공휴일전날
+              tbody
+                tr
+                  th 입금가
+                  td 
+                    input.form-control(type='text', value='')
+                  td 
+                    input.form-control(type='text', value='')
+                  td 
+                    input.form-control(type='text', value='')
+                  td 
+                    input.form-control(type='text', value='')
+                  td 
+                    input.form-control(type='text', value='')
+                  td 
+                    input.form-control(type='text', value='')
+                  td 
+                    input.form-control(type='text', value='')
+                tr
+                  th.text-muted 판매가
+                  td.text-muted -
+                  td.text-muted -
+                  td.text-muted -
+                  td.text-muted -
+                  td.text-muted -
+                  td.text-muted -
+                  td.text-muted -
+
+        .py-2
+        hr.py-2
+        button.btn.btn-primary.btn-lg.btn-block(type='button') 저장    
+
+          

@@ -1,0 +1,59 @@
+include ../../includes/header.pug
+include ../../includes/topbar.pug
+
+.row.no-gutters
+  include ../../includes/leftside-hotel.pug
+
+  #content.col-md-8.col-lg-9.col-xl-10
+    .row.no-gutters
+      .col-md-10.col-xl-8
+        h1 패키지 상세정보
+        .lead.mb-5 패키지요금은 해당 날짜의 요금을 기준으로 % 또는 증감액으로 자동 설정 됩니다.
+        
+        .form-group.row
+          label.col-md-3.col-form-label 패키지명
+          .col-md-9
+            input.form-control(type='text', value='')
+        .form-group.row
+          label.col-md-3.col-form-label 요금설정
+          .col-md-9
+            .d-flex
+              select.form-control.mr-2.bg-primary.text-white(style='width: 10rem')
+                option +                  
+                option -
+              input.form-control.mr-2(type='number', value='')
+              select.form-control.bg-primary.text-white(style='width: 10rem')
+                option %
+                option 원
+        .form-group.row
+          label.col-md-3.col-form-label 적용객실
+          .col-md-9
+            .form-check
+              label.form-check-label
+                input.form-check-input(type='checkbox')
+                | SUPERIOR ROOM (더블)
+            .form-check
+              label.form-check-label
+                input.form-check-input(type='checkbox')
+                | SUPERIOR ROOM (트윈)
+            .form-check
+              label.form-check-label
+                input.form-check-input(type='checkbox')
+                | DELUXE ROOM (더블)
+            .form-check
+              label.form-check-label
+                input.form-check-input(type='checkbox')
+                | DELUXE ROOM (트윈)
+            .form-check
+              label.form-check-label
+                input.form-check-input(type='checkbox')
+                | JR.SUITE ROOM
+        
+        .py-4
+        hr.py-2
+        .row
+          .col-4
+            button.btn.btn-secondary.btn-lg.btn-block(type='button') 뒤로
+          .col-8
+            button.btn.btn-primary.btn-lg.btn-block(type='button') 저장
+              

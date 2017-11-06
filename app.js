@@ -41,9 +41,19 @@ app.get('/setting/sms', function (req, res){res.render('setting/sms')})
 
 //------------ TMON HOTEL EXTRANET ------------------------//
 
-app.get('/hotel', function (req, res){res.render('hotel/setting/hotel')})
+// 호텔 기본 라우팅
+app.get('/hotel', function (req, res){res.render('hotel/reservations')})
 
+// 예약목록
+app.get('/hotel/reservations', function (req, res){res.render('hotel/reservations')})
+
+// 설정
 app.get('/hotel/setting/hotel', function (req, res){res.render('hotel/setting/hotel')})
+app.get('/hotel/setting/rooms', function (req, res){res.render('hotel/setting/rooms')})
+app.get('/hotel/setting/rooms/edit', function (req, res){res.render('hotel/setting/room-edit')})
+app.get('/hotel/setting/price', function (req, res){res.render('hotel/setting/price')})
+app.get('/hotel/setting/package', function (req, res){res.render('hotel/setting/package')})
+app.get('/hotel/setting/package/create', function (req, res){res.render('hotel/setting/package-create')})
 
 
 app.listen(3000, function () {

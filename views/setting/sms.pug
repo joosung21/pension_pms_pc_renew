@@ -10,16 +10,11 @@ include ../includes/topbar.pug
         h1 문자발송 정보
         .lead.mb-5 실시간 예약창에서 들어온 예약에 대해 자동문자 여부와 문구를 관리합니다.
 
-        .btn-group(role='group')
-          button.btn.btn-success(type='button') 문자발송 ON
-          button.btn.btn-light(type='button') OFF
-        
-        //- If switch is off
-        //- .btn-group(role='group')
-        //-   button.btn.btn-light(type='button') 자동문자발송 ON
-        //-   button.btn.btn-secondary(type='button') OFF
-
-        br
+        .d-flex.align-items-center
+          h5.mr-3 문자발송 켜기/끄기
+          label.switch
+            input(type='checkbox', checked)
+            span.slider.round
         small.text-muted SMS 발송비용은 자리 서비스에서 부담합니다. (사장님 추가비용 없음)
 
         .py-4        

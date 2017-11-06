@@ -16,14 +16,11 @@ include ../includes/topbar.pug
               i.fa.fa-trash.fa-lg.mr-1
               span 객실삭제
         
-        .btn-group(role='group')
-          button.btn.btn-success(type='button') 실시간판매 ON
-          button.btn.btn-light(type='button', data-toggle='tooltip', data-placement='bottom', title='실시간 판매를 중지합니다') OFF
-        
-        //- If switch is off
-        //- .btn-group(role='group')
-        //-   button.btn.btn-light(type='button', data-toggle='tooltip', data-placement='bottom', title='실시간 판매를 시작합니다') 판매 ON
-        //-   button.btn.btn-secondary(type='button') OFF
+        .d-flex.align-items-center
+          h5.mr-3 실시간판매 켜기/끄기
+          label.switch
+            input(type='checkbox', checked)
+            span.slider.round
         
         .py-4
 
