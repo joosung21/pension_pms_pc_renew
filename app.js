@@ -55,6 +55,8 @@ app.get('/hotel/setting/price', function (req, res){res.render('hotel/setting/pr
 app.get('/hotel/setting/package', function (req, res){res.render('hotel/setting/package')})
 app.get('/hotel/setting/package/create', function (req, res){res.render('hotel/setting/package-create')})
 
+app.get('/onda', function (req, res){res.render('onda')})
+
 
 app.listen(3000, function () {
   console.log('App listening on port 3000!')

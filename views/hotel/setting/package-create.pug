@@ -17,12 +17,15 @@ include ../../includes/topbar-hotel.pug
         .form-group.row
           label.col-md-3.col-form-label 요금설정
           .col-md-9
-            .d-flex
-              select.form-control.mr-2.bg-primary.text-white(style='width: 10rem')
-                option +                  
-                option -
-              input.form-control.mr-2(type='number', value='')
-              select.form-control.bg-primary.text-white(style='width: 10rem')
+            .form-row
+              .col
+                h5.mr-3.mt-2 객실별 요금
+              .col
+                select.form-control.mr-2(style='width: 7rem')
+                  option +
+                  option -
+              input.form-control.mr-2(type='number', value='', style='width: 10rem')
+              select.form-control(style='width: 7rem')
                 option %
                 option 원
         .form-group.row
