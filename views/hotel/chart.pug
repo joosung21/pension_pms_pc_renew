@@ -1,0 +1,2190 @@
+include ../includes/header.pug
+include ../includes/topbar-hotel.pug
+
+.row.no-gutters
+  #content.col-md-12
+
+    .row
+      .col-lg-3
+          h1 요금/재고관리
+      .col-lg-6
+        .d-flex.justify-content-center
+          h1
+            button.btn.btn-light.btn-white.btn-lg(type='button')
+              i.fa.fa-angle-left.fa-2x
+            | 2017년 8월
+            button.btn.btn-light.btn-white.btn-lg(type='button')
+              i.fa.fa-angle-right.fa-2x
+
+      .col-lg-3
+        h3.text-right 2017.8.19 ~ 2017.9.1
+    
+    .row.mt-3.mb-2
+      .col-lg-6
+        .form-inline
+          .btn-group.mr-3
+            button.btn.btn-primary(type='button', onclick='toggleView("stock")') 재고보기
+            button.btn.btn-primary(type='button', onclick='toggleView("price")') 요금보기
+            button.btn.btn-primary(type='button', onclick='toggleView("package")') 패키지보기
+          button.btn.btn-primary.mr-3(type='button', onclick='toggleView("closing")') 판매중지/재개
+          select.form-control.bg-primary.text-white
+            option(seleted) 전체객실
+            option SUPERIOR ROOM (더블)
+            option SUPERIOR ROOM (트윈)
+            option DELUXE ROOM (더블)
+            option DELUXE ROOM (트윈)
+            option JR.SUITE ROOM
+          .ml-3 
+            strong.mr-2 요금기준:
+            | 입금가
+      .col-lg-6.text-right
+        //- 일괄수정 버튼: 아무것도 선택되어 있지 않을 때에는 버튼 속성에 disabled 추가할 것.
+        button.btn.btn-primary.btn-lg.mr-3(type='button', data-toggle='modal', data-id='1', data-target='#exampleModal')
+          //- i.fa.fa-magnet.fa-lg.mr-2
+          i.fa.fa-sitemap.fa-lg.mr-2
+          | 선택 일괄수정
+    
+    .chart-row.header
+      .d-flex.align-items-center
+        .row-title
+          button.btn.btn-lg.btn-block.btn-light(type='button') 
+            i.fa.fa-mail-reply.fa-lg.mr-2
+            | 오늘로 이동
+        .dd-wrapper      
+          .dd.holiday.disabled
+            .date 19
+            .day 토
+          .dd.holiday.disabled
+            .date 20
+            .day 일
+          .dd            
+            .date.today 21
+            .day 월            
+          .dd
+            .date 22
+            .day 화
+          .dd
+            .date 23
+            .day 수
+          .dd
+            .date 24
+            .day 목
+          .dd
+            .date 25
+            .day 금
+          .dd.holiday
+            .date 26
+            .day 토
+          .dd.holiday
+            .date 27
+            .day 일
+          .dd
+            .date 28
+            .day 월
+          .dd
+            .date 29
+            .day 화
+          .dd
+            .date 30
+            .day 수
+          .dd
+            .date 31
+            .day 목
+          .dd
+            .date 9/1
+            .day 금
+
+    .py-2
+
+    //- First Room
+    .chart-row
+      .d-flex.align-items-center
+        .row-title 
+          h4 SUPERIOR ROOM (더블)
+        .dd-wrapper
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', disabled)
+                span.slider.round
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', disabled)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon        
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon.bg-secondary              
+                  i.fa.fa-cube.fa-lg.text-white
+                input.form-control(type='number', value='0', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control.dirty(type='number', value='10', min='0')
+            .room-price
+              input.form-control.dirty(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+    
+    .chart-row.package
+      .d-flex.align-items-center
+        .row-title 
+          .d-flex.align-items-center
+            i.fa.fa-link.fa-lg.mr-2.text-primary
+            span [11♥11데이] 와인제공PKG
+        .dd-wrapper
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+    .chart-row.package
+      .d-flex.align-items-center
+        .row-title 
+          .d-flex.align-items-center
+            i.fa.fa-link.fa-lg.mr-2.text-primary
+            span ★티몬깜짝가 Room Only★
+        .dd-wrapper
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+    .chart-row.package
+      .d-flex.align-items-center
+        .row-title 
+          .d-flex.align-items-center
+            i.fa.fa-link.fa-lg.mr-2.text-primary
+            span 2인조식 PKG
+        .dd-wrapper
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000') 
+    .chart-row.package
+      .d-flex.align-items-center
+        .row-title 
+          .d-flex.align-items-center
+            i.fa.fa-link.fa-lg.mr-2.text-primary
+            span ★에버랜드 PKG★캐릭터 인형 증정
+        .dd-wrapper
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+    
+    .py-4
+
+
+    //- Second Room
+    .chart-row
+      .d-flex.align-items-center
+        .row-title 
+          h4 DELUXE ROOM (트윈)
+        .dd-wrapper
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', disabled)
+                span.slider.round
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', disabled)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox')
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox')
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+    
+    .chart-row.package
+      .d-flex.align-items-center
+        .row-title 
+          .d-flex.align-items-center
+            i.fa.fa-link.fa-lg.mr-2.text-primary
+            span [11♥11데이] 와인제공PKG
+        .dd-wrapper
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+    .chart-row.package
+      .d-flex.align-items-center
+        .row-title 
+          .d-flex.align-items-center
+            i.fa.fa-link.fa-lg.mr-2.text-primary
+            span ★티몬깜짝가 Room Only★
+        .dd-wrapper
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+    .chart-row.package
+      .d-flex.align-items-center
+        .row-title 
+          .d-flex.align-items-center
+            i.fa.fa-link.fa-lg.mr-2.text-primary
+            span 2인조식 PKG
+        .dd-wrapper
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000') 
+    .chart-row.package
+      .d-flex.align-items-center
+        .row-title 
+          .d-flex.align-items-center
+            i.fa.fa-link.fa-lg.mr-2.text-primary
+            span ★에버랜드 PKG★캐릭터 인형 증정
+        .dd-wrapper
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+    
+    .py-4
+    //- Third Room
+    .chart-row
+      .d-flex.align-items-center
+        .row-title 
+          h4 JR.SUITE ROOM
+        .dd-wrapper
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', disabled)
+                span.slider.round
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', disabled)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+            .closeout
+              label.switch
+                input(type='checkbox', checked)
+                span.slider.round
+    
+    .chart-row.package
+      .d-flex.align-items-center
+        .row-title 
+          .d-flex.align-items-center
+            i.fa.fa-link.fa-lg.mr-2.text-primary
+            span [11♥11데이] 와인제공PKG
+        .dd-wrapper
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+    .chart-row.package
+      .d-flex.align-items-center
+        .row-title 
+          .d-flex.align-items-center
+            i.fa.fa-link.fa-lg.mr-2.text-primary
+            span ★티몬깜짝가 Room Only★
+        .dd-wrapper
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+    .chart-row.package
+      .d-flex.align-items-center
+        .row-title 
+          .d-flex.align-items-center
+            i.fa.fa-link.fa-lg.mr-2.text-primary
+            span 2인조식 PKG
+        .dd-wrapper
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000') 
+    .chart-row.package
+      .d-flex.align-items-center
+        .row-title 
+          .d-flex.align-items-center
+            i.fa.fa-link.fa-lg.mr-2.text-primary
+            span ★에버랜드 PKG★캐릭터 인형 증정
+        .dd-wrapper
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd.disabled
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-cube.fa-lg
+                input.form-control(type='number', value='10', min='0')
+            .room-price
+              input.form-control(type='text', value='200,000')
+    
+    .py-5
+
+.bottom-action
+  button.btn.btn-lg.btn-light(type='button')
+    i.fa.fa-undo.fa-lg.mr-2
+    | 취소
+  button.btn.btn-lg.btn-warning(type='button')
+    i.fa.fa-check.fa-lg.mr-2
+    | 수정사항 저장
+
+.chart-row.header.sticky-date(style='display:none')
+  .d-flex.align-items-center
+    .row-title
+      h1 2017년 8월        
+    .dd-wrapper      
+      .dd.holiday.disabled
+        .date 19
+        .day 토
+      .dd.holiday.disabled
+        .date 20
+        .day 일
+      .dd
+        .date.today 21
+        .day 월        
+      .dd
+        .date 22
+        .day 화
+      .dd
+        .date 23
+        .day 수
+      .dd
+        .date 24
+        .day 목
+      .dd
+        .date 25
+        .day 금
+      .dd.holiday
+        .date 26
+        .day 토
+      .dd.holiday
+        .date 27
+        .day 일
+      .dd
+        .date 28
+        .day 월
+      .dd
+        .date 29
+        .day 화
+      .dd
+        .date 30
+        .day 수
+      .dd
+        .date 31
+        .day 목
+      .dd
+        .date 9/1
+        .day 금
+
+
+//- Modal
+#exampleModal.modal.fade(tabindex='-1', role='dialog')
+  .modal-dialog.modal-lg(role='document')
+    .modal-content
+      .modal-header
+        h5#exampleModalLabel.modal-title 
+          | 일괄수정       
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+      .modal-body
+        h3.text-center.my-5 8월 23(수), 8월 24(목), 8월 25(금)
+        table.table.table-vertical-middle
+          thead
+            tr
+              th 객실타입              
+              th(style='width: 15%') 재고수
+              th 입금가
+              th 판매중지/재개
+          tbody
+            tr
+              td SUPERIOR ROOM (더블)
+              td
+                input.form-control(type='number', min='0')
+              td
+                input.form-control(type='text')
+              td.text-center
+                label.switch.mt-3
+                  input(type='checkbox', checked)
+                  span.slider.round
+            tr
+              td SUPERIOR ROOM (트윈)
+              td
+                input.form-control(type='number', min='0')
+              td
+                input.form-control(type='text')
+              td.text-center
+                label.switch.mt-3
+                  input(type='checkbox', checked)
+                  span.slider.round
+            tr
+              td DELUXE ROOM (더블)
+              td
+                input.form-control(type='number', min='0')
+              td
+                input.form-control(type='text')
+              td.text-center
+                label.switch.mt-3
+                  input(type='checkbox', checked)
+                  span.slider.round
+            tr
+              td DELUXE ROOM (트윈)
+              td
+                input.form-control(type='number', min='0')
+              td
+                input.form-control(type='text')
+              td.text-center
+                label.switch.mt-3
+                  input(type='checkbox', checked)
+                  span.slider.round
+            tr
+              td JR.SUITE ROOM
+              td
+                input.form-control(type='number', min='0')
+              td
+                input.form-control(type='text')
+              td.text-center
+                label.switch.mt-3
+                  input(type='checkbox', checked)
+                  span.slider.round
+        
+      .modal-footer
+        button.btn.btn-lg.btn-secondary(type='button', data-dismiss='modal') 닫기
+        button.btn.btn-lg.btn-primary(type='button') 일괄수정

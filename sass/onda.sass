@@ -34,6 +34,9 @@ body
   background-color: white
   border-color: white
 
+.bg-light
+  background-color: #fafafa !important
+
 .image-upload
   .unit
     position: relative
@@ -110,8 +113,8 @@ table
   right: 0
   bottom: 0
   background-color: $gray
-  -webkit-transition: .4s
-  transition: .4s
+  -webkit-transition: .3s
+  transition: .3s
   &:before
     position: absolute
     content: ' '
@@ -120,8 +123,8 @@ table
     left: 4px
     bottom: 4px
     background-color: white
-    -webkit-transition: .4s
-    transition: .4s
+    -webkit-transition: .3s
+    transition: .3s
 input
   &:checked + .slider
     background-color: $green
@@ -216,6 +219,9 @@ input
 .modal-header  
   background-color: #f1f1f1
   
+select.form-control:not([size]):not([multiple])
+  height: calc(2.25rem + 3px)
+
 // 예약목록
 table.table-reservation
   tr.canceled
@@ -373,3 +379,107 @@ table.price-table
       font-weight: 400
     td, td input
       text-align: center
+
+// The Chart
+.chart-row
+  .row-title
+    width: 15%
+    padding-right: 1rem
+  .dd-wrapper 
+    width: 85%
+    .dd
+      display: inline-block
+      position: relative
+      width: calc( 100% / 14)      
+      text-align: center
+      padding: .5rem .2rem
+      font-size: 15px
+      height: 100%
+      * 
+        text-align: center
+      &.selected
+        background-color: $blue
+        .day, .date,
+          color: white !important
+        .date.today
+          border-color: white !important
+        &:hover
+          background-color: darken($blue, 5%) !important
+      input.form-control
+        padding-right: 0
+        padding-left: 0
+        font-size: 14pt        
+        &.dirty
+          background-color: lighten($yellow, 10%)
+          border-color: darken($yellow, 12%)        
+      &.holiday
+        .date, .day
+          color: $red
+        .date.today
+          border-color: $red
+      &.disabled
+        opacity: .5
+      .room-stock 
+        margin-bottom: 3px
+        .input-group-addon
+          padding-right: 7px
+          padding-left: 7px          
+        input.form-control
+          font-size: 12pt
+      .room-price
+        display: none
+        input.form-control
+          border-color: white          
+        &:hover
+          input.form-control
+            border-color: #dddfe1
+      .closeout
+        display: none
+
+.chart-row.header
+  margin-left: -3rem
+  margin-right: -3rem    
+  padding: 1rem 3rem
+  // background-color: lighten($dark, 5%)
+  background-color: #fafafa
+  .dd-wrapper    
+    .dd
+      cursor: pointer
+      &:hover
+        background-color: #f1f3f5      
+    .date
+      font-size: 20pt
+      display: inline-block
+      &.today
+        border-bottom: 4px solid $dark
+        line-height: 2.2rem
+    .day
+      font-size: 17pt
+      
+
+.chart-row.package  
+  .dd
+    input.form-control
+      font-size: 12pt
+
+.bottom-action
+  position: fixed
+  bottom: 0
+  width: 100%
+  background-color: $dark
+  padding: 1rem 0
+  text-align: center
+  z-index: 1000
+  .btn
+    margin: 0 .5rem
+
+.sticky-date
+  position: fixed
+  width: 100%
+  top: 0
+  background-color: white !important
+  z-index: 1000
+  padding: 0 3rem 0 3rem !important
+  margin: 0 !important
+  box-shadow: 0 5px 5px rgba(0,0,0,.2)   
+  

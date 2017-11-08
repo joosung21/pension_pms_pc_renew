@@ -47,6 +47,9 @@ app.get('/hotel', function (req, res){res.render('hotel/reservations')})
 // 예약목록
 app.get('/hotel/reservations', function (req, res){res.render('hotel/reservations')})
 
+// 요굼/재고관리
+app.get('/hotel/chart', function (req, res){res.render('hotel/chart')})
+
 // 설정
 app.get('/hotel/setting/hotel', function (req, res){res.render('hotel/setting/hotel')})
 app.get('/hotel/setting/rooms', function (req, res){res.render('hotel/setting/rooms')})
@@ -54,7 +57,14 @@ app.get('/hotel/setting/rooms/edit', function (req, res){res.render('hotel/setti
 app.get('/hotel/setting/price', function (req, res){res.render('hotel/setting/price')})
 app.get('/hotel/setting/package', function (req, res){res.render('hotel/setting/package')})
 app.get('/hotel/setting/package/create', function (req, res){res.render('hotel/setting/package-create')})
+app.get('/hotel/setting/policy', function (req, res){res.render('hotel/setting/policy')})
 
+
+
+
+
+
+// Temporary ONDA website draft
 app.get('/onda', function (req, res){res.render('onda')})
 
 

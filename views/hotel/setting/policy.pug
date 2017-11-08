@@ -1,0 +1,97 @@
+include ../../includes/header.pug
+include ../../includes/topbar-hotel.pug
+
+.row.no-gutters
+  include ../../includes/leftside-hotel.pug
+
+  #content.col-md-8.col-lg-9.col-xl-10
+    .row.no-gutters
+      .col-md-9.col-xl-7
+        h1 판매정책
+        .lead.mb-5 취소환불 정책을 변경하시려면 담당 MD에게 요청해 주시기 바랍니다.
+
+        .form-group.row
+          label.col-md-3.col-form-label 요금기준
+          .col-md-9
+            .d-flex
+              .form-check.mr-4
+                label.form-check-label
+                  input.form-check-input(type='radio', name='policyRadio', checked)
+                  | 입금가
+              .form-check
+                label.form-check-label
+                  input.form-check-input(type='radio', name='policyRadio')
+                  | 판매가
+              
+        .form-group.row
+          label.col-md-3.col-form-label 계약 수수료
+          .col-md-9
+            .input-group(style='width: 9rem')
+              input.form-control(type='number', min='0', value='')
+              .input-group-addon %
+
+        .form-group.row
+          label.col-md-3.col-form-label 취소환불정책
+          .col-md-9
+            .input-group.mb-3
+              .input-group-addon 10일전 취소
+              input.form-control(type='number', min='0', value='')
+              .input-group-addon %
+              .input-group-addon 환불
+            .input-group.mb-3
+              .input-group-addon 9일전 취소
+              input.form-control(type='number', min='0', value='')
+              .input-group-addon %
+              .input-group-addon 환불
+            .input-group.mb-3
+              .input-group-addon 8일전 취소
+              input.form-control(type='number', min='0', value='')
+              .input-group-addon %
+              .input-group-addon 환불
+            .input-group.mb-3
+              .input-group-addon 7일전 취소
+              input.form-control(type='number', min='0', value='')
+              .input-group-addon %
+              .input-group-addon 환불
+            .input-group.mb-3
+              .input-group-addon 6일전 취소
+              input.form-control(type='number', min='0', value='')
+              .input-group-addon %
+              .input-group-addon 환불
+            .input-group.mb-3
+              .input-group-addon 5일전 취소
+              input.form-control(type='number', min='0', value='')
+              .input-group-addon %
+              .input-group-addon 환불
+            .input-group.mb-3
+              .input-group-addon 4일전 취소
+              input.form-control(type='number', min='0', value='')
+              .input-group-addon %
+              .input-group-addon 환불
+            .input-group.mb-3
+              .input-group-addon 3일전 취소
+              input.form-control(type='number', min='0', value='')
+              .input-group-addon %
+              .input-group-addon 환불
+            .input-group.mb-3
+              .input-group-addon 2일전 취소
+              input.form-control(type='number', min='0', value='')
+              .input-group-addon %
+              .input-group-addon 환불
+            .input-group.mb-3
+              .input-group-addon 1일전 취소
+              input.form-control(type='number', min='0', value='')
+              .input-group-addon %
+              .input-group-addon 환불
+            .input-group.mb-3
+              .input-group-addon 당일 취소
+              input.form-control(type='number', min='0', value='')
+              .input-group-addon %
+              .input-group-addon 환불
+
+
+
+
+        .py-4
+        hr.py-2        
+        button.btn.btn-primary.btn-lg.btn-block(type='button') 저장

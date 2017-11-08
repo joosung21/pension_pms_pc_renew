@@ -17,17 +17,19 @@ include ../../includes/topbar-hotel.pug
         .form-group.row
           label.col-md-3.col-form-label 요금설정
           .col-md-9
-            .form-row
-              .col
-                h5.mr-3.mt-2 객실별 요금
-              .col
-                select.form-control.mr-2(style='width: 7rem')
-                  option +
-                  option -
-              input.form-control.mr-2(type='number', value='', style='width: 10rem')
-              select.form-control(style='width: 7rem')
-                option %
-                option 원
+            .d-flex
+              h5.mr-3.mt-2 객실별 요금
+              .form-row              
+                .col-3
+                  select.form-control.mr-2
+                    option +
+                    option -
+                .col-5
+                  input.form-control.mr-2(type='number', value='')
+                .col-3
+                  select.form-control
+                    option %
+                    option 원
         .form-group.row
           label.col-md-3.col-form-label 적용객실
           .col-md-9
@@ -51,6 +53,46 @@ include ../../includes/topbar-hotel.pug
               label.form-check-label
                 input.form-check-input(type='checkbox')
                 | JR.SUITE ROOM
+        .form-group.row
+          label.col-md-3.col-form-label 재고수
+          .col-md-9
+            .form-row
+              .col
+                select.form-control
+                  option 객실과 재고수 동일
+                  option(selected) 객실과 재고수 다름
+              .col
+                .input-group
+                  input.form-control(type='number', min='1', value='1')
+                  .input-group-addon 개
+        .form-group.row
+          label.col-md-3.col-form-label 적용기간
+          .col-md-9
+            .form-row
+              .col-4
+                select.form-control
+                  option(selected) 상시적용
+                  option 입실일 기간적용
+              .col-4
+                .input-group
+                  input.form-control(type='date')
+                  .input-group-addon 부터
+              .col-4
+                .input-group
+                  input.form-control(type='date')
+                  .input-group-addon 까지
+        .form-group.row
+          label.col-md-3.col-form-label 환불정책
+          .col-md-9
+            .d-flex
+              .form-check.mr-4
+                label.form-check-label
+                  input.form-check-input(type='checkbox')
+                  | 환불가능
+              .form-check
+                label.form-check-label
+                  input.form-check-input(type='checkbox')
+                  | 환불불가
         
         .py-4
         hr.py-2
