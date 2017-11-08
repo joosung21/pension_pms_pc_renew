@@ -26,7 +26,7 @@ include ../includes/topbar-hotel.pug
             button.btn.btn-primary(type='button', onclick='toggleView("stock")') 재고보기
             button.btn.btn-primary(type='button', onclick='toggleView("price")') 요금보기
             button.btn.btn-primary(type='button', onclick='toggleView("package")') 패키지보기
-          button.btn.btn-primary.mr-3(type='button', onclick='toggleView("closing")') 판매중지/재개
+          button.btn.btn-primary.mr-3(type='button', onclick='toggleView("closing")') 판매마감/재개
           select.form-control.bg-primary.text-white
             option(seleted) 전체객실
             option SUPERIOR ROOM (더블)
@@ -39,10 +39,11 @@ include ../includes/topbar-hotel.pug
             | 입금가
       .col-lg-6.text-right
         //- 일괄수정 버튼: 아무것도 선택되어 있지 않을 때에는 버튼 속성에 disabled 추가할 것.
-        button.btn.btn-primary.btn-lg.mr-3(type='button', data-toggle='modal', data-id='1', data-target='#exampleModal')
-          //- i.fa.fa-magnet.fa-lg.mr-2
-          i.fa.fa-sitemap.fa-lg.mr-2
-          | 선택 일괄수정
+        button.btn.btn-primary.mr-3(type='button', data-toggle='modal', data-id='1', data-target='#exampleModal')          
+          | 선택날짜 일괄수정
+        
+        button.btn.btn-primary.mr-3(type='button', data-toggle='modal', data-id='1', data-target='#exampleModal2')          
+          | 기간지정 일괄수정
     
     .chart-row.header
       .d-flex.align-items-center
@@ -87,10 +88,10 @@ include ../includes/topbar-hotel.pug
           .dd
             .date 30
             .day 수
-          .dd
+          .dd.disabled
             .date 31
             .day 목
-          .dd
+          .dd.disabled
             .date 9/1
             .day 금
 
@@ -106,7 +107,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg                  
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -118,7 +119,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -129,8 +130,8 @@ include ../includes/topbar-hotel.pug
           .dd
             .room-stock
               .input-group
-                .input-group-addon        
-                  i.fa.fa-cube.fa-lg
+                .input-group-addon                  
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -142,7 +143,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -154,7 +155,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon.bg-secondary              
-                  i.fa.fa-cube.fa-lg.text-white
+                  i.fa.fa-mobile.fa-lg.text-white
                 input.form-control(type='number', value='0', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -166,7 +167,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -178,7 +179,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control.dirty(type='number', value='10', min='0')
             .room-price
               input.form-control.dirty(type='text', value='200,000')
@@ -190,7 +191,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -202,7 +203,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -214,7 +215,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -226,7 +227,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -238,7 +239,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -246,11 +247,11 @@ include ../includes/topbar-hotel.pug
               label.switch
                 input(type='checkbox', checked)
                 span.slider.round
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -258,11 +259,11 @@ include ../includes/topbar-hotel.pug
               label.switch
                 input(type='checkbox', checked)
                 span.slider.round
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -282,7 +283,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -290,7 +291,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -298,7 +299,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -306,7 +307,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -314,7 +315,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -322,7 +323,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -330,7 +331,15 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
+                input.form-control.dirty(type='number', value='10', min='0')
+            .room-price
+              input.form-control.dirty(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -338,7 +347,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -346,7 +355,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -354,7 +363,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -362,34 +371,27 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
-          .dd
-            .room-stock
-              .input-group
-                .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
-                input.form-control(type='number', value='10', min='0')
-            .room-price
-              input.form-control(type='text', value='200,000')
+              
     .chart-row.package
       .d-flex.align-items-center
         .row-title 
@@ -401,7 +403,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -409,7 +411,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -417,7 +419,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -425,7 +427,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -433,7 +435,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -441,7 +443,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -449,7 +451,15 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
+                input.form-control.dirty(type='number', value='10', min='0')
+            .room-price
+              input.form-control.dirty(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -457,7 +467,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -465,7 +475,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -473,7 +483,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -481,34 +491,27 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
-          .dd
-            .room-stock
-              .input-group
-                .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
-                input.form-control(type='number', value='10', min='0')
-            .room-price
-              input.form-control(type='text', value='200,000')
+
     .chart-row.package
       .d-flex.align-items-center
         .row-title 
@@ -520,7 +523,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -528,7 +531,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -536,7 +539,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -544,7 +547,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -552,7 +555,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -560,7 +563,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -568,7 +571,15 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
+                input.form-control.dirty(type='number', value='10', min='0')
+            .room-price
+              input.form-control.dirty(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -576,7 +587,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -584,7 +595,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -592,7 +603,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -600,34 +611,27 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
-                input.form-control(type='number', value='10', min='0')
-            .room-price
-              input.form-control(type='text', value='200,000')
-          .dd
-            .room-stock
-              .input-group
-                .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000') 
+
     .chart-row.package
       .d-flex.align-items-center
         .row-title 
@@ -639,7 +643,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -647,7 +651,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -655,7 +659,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -663,7 +667,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -671,7 +675,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -679,7 +683,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -687,7 +691,15 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
+                input.form-control.dirty(type='number', value='10', min='0')
+            .room-price
+              input.form-control.dirty(type='text', value='200,000')
+          .dd
+            .room-stock
+              .input-group
+                .input-group-addon                  
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -695,7 +707,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -703,7 +715,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -711,7 +723,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -719,31 +731,23 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
-                input.form-control(type='number', value='10', min='0')
-            .room-price
-              input.form-control(type='text', value='200,000')
-          .dd
-            .room-stock
-              .input-group
-                .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -761,7 +765,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -773,7 +777,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -785,7 +789,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -797,7 +801,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -809,7 +813,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -821,7 +825,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -833,7 +837,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -845,7 +849,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -857,7 +861,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -869,7 +873,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -881,7 +885,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -893,7 +897,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -901,11 +905,11 @@ include ../includes/topbar-hotel.pug
               label.switch
                 input(type='checkbox', checked)
                 span.slider.round
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -913,11 +917,11 @@ include ../includes/topbar-hotel.pug
               label.switch
                 input(type='checkbox', checked)
                 span.slider.round
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -937,7 +941,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -945,7 +949,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -953,7 +957,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -961,7 +965,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -969,7 +973,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -977,7 +981,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -985,7 +989,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -993,7 +997,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1001,7 +1005,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1009,7 +1013,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1017,7 +1021,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1025,26 +1029,27 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
+
     .chart-row.package
       .d-flex.align-items-center
         .row-title 
@@ -1056,7 +1061,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1064,7 +1069,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1072,7 +1077,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1080,7 +1085,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1088,7 +1093,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1096,7 +1101,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1104,7 +1109,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1112,7 +1117,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1120,7 +1125,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1128,7 +1133,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1136,7 +1141,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1144,26 +1149,27 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
+
     .chart-row.package
       .d-flex.align-items-center
         .row-title 
@@ -1175,7 +1181,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1183,7 +1189,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1191,7 +1197,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1199,7 +1205,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1207,7 +1213,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1215,7 +1221,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1223,7 +1229,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1231,7 +1237,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1239,7 +1245,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1247,7 +1253,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1255,7 +1261,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1263,26 +1269,27 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
-              input.form-control(type='text', value='200,000') 
+              input.form-control(type='text', value='200,000')
+
     .chart-row.package
       .d-flex.align-items-center
         .row-title 
@@ -1294,7 +1301,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1302,7 +1309,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1310,7 +1317,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1318,7 +1325,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1326,7 +1333,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1334,7 +1341,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1342,7 +1349,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1350,7 +1357,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1358,7 +1365,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1366,7 +1373,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1374,7 +1381,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1382,23 +1389,23 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1414,7 +1421,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1426,7 +1433,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1438,7 +1445,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1450,7 +1457,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1462,7 +1469,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1474,7 +1481,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1486,7 +1493,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1498,7 +1505,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1510,7 +1517,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1522,7 +1529,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1534,7 +1541,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1546,7 +1553,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1554,11 +1561,11 @@ include ../includes/topbar-hotel.pug
               label.switch
                 input(type='checkbox', checked)
                 span.slider.round
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1566,11 +1573,11 @@ include ../includes/topbar-hotel.pug
               label.switch
                 input(type='checkbox', checked)
                 span.slider.round
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1590,7 +1597,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1598,7 +1605,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1606,7 +1613,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1614,7 +1621,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1622,7 +1629,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1630,7 +1637,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1638,7 +1645,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1646,7 +1653,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1654,7 +1661,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1662,7 +1669,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1670,7 +1677,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1678,26 +1685,27 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
+
     .chart-row.package
       .d-flex.align-items-center
         .row-title 
@@ -1709,7 +1717,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1717,7 +1725,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1725,7 +1733,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1733,7 +1741,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1741,7 +1749,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1749,7 +1757,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1757,7 +1765,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1765,7 +1773,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1773,7 +1781,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1781,7 +1789,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1789,7 +1797,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1797,26 +1805,27 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
+
     .chart-row.package
       .d-flex.align-items-center
         .row-title 
@@ -1828,7 +1837,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1836,7 +1845,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1844,7 +1853,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1852,7 +1861,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1860,7 +1869,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1868,7 +1877,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1876,7 +1885,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1884,7 +1893,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1892,7 +1901,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1900,7 +1909,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1908,7 +1917,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1916,26 +1925,27 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000') 
+
     .chart-row.package
       .d-flex.align-items-center
         .row-title 
@@ -1947,7 +1957,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1955,7 +1965,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1963,7 +1973,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1971,7 +1981,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1979,7 +1989,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1987,7 +1997,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -1995,7 +2005,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -2003,7 +2013,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -2011,7 +2021,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -2019,7 +2029,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -2027,7 +2037,7 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -2035,23 +2045,23 @@ include ../includes/topbar-hotel.pug
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
-          .dd
+          .dd.disabled
             .room-stock
               .input-group
                 .input-group-addon                  
-                  i.fa.fa-cube.fa-lg
+                  i.fa.fa-mobile.fa-lg
                 input.form-control(type='number', value='10', min='0')
             .room-price
               input.form-control(type='text', value='200,000')
@@ -2115,13 +2125,13 @@ include ../includes/topbar-hotel.pug
         .day 금
 
 
-//- Modal
+//- Modal: 선택한 날짜 일괄수정
 #exampleModal.modal.fade(tabindex='-1', role='dialog')
   .modal-dialog.modal-lg(role='document')
     .modal-content
       .modal-header
         h5#exampleModalLabel.modal-title 
-          | 일괄수정       
+          | 선택한 날짜 일괄수정       
         button.close(type='button', data-dismiss='modal', aria-label='Close')
           span(aria-hidden='true') ×
       .modal-body
@@ -2132,14 +2142,16 @@ include ../includes/topbar-hotel.pug
               th 객실타입              
               th(style='width: 15%') 재고수
               th 입금가
-              th 판매중지/재개
+              th 판매가
+              th 판매마감/재개
           tbody
             tr
               td SUPERIOR ROOM (더블)
               td
                 input.form-control(type='number', min='0')
               td
-                input.form-control(type='text')
+                input.form-control(type='text', value='200,000')
+              td 220,000
               td.text-center
                 label.switch.mt-3
                   input(type='checkbox', checked)
@@ -2150,6 +2162,7 @@ include ../includes/topbar-hotel.pug
                 input.form-control(type='number', min='0')
               td
                 input.form-control(type='text')
+              td
               td.text-center
                 label.switch.mt-3
                   input(type='checkbox', checked)
@@ -2160,6 +2173,7 @@ include ../includes/topbar-hotel.pug
                 input.form-control(type='number', min='0')
               td
                 input.form-control(type='text')
+              td
               td.text-center
                 label.switch.mt-3
                   input(type='checkbox', checked)
@@ -2170,6 +2184,7 @@ include ../includes/topbar-hotel.pug
                 input.form-control(type='number', min='0')
               td
                 input.form-control(type='text')
+              td
               td.text-center
                 label.switch.mt-3
                   input(type='checkbox', checked)
@@ -2180,6 +2195,137 @@ include ../includes/topbar-hotel.pug
                 input.form-control(type='number', min='0')
               td
                 input.form-control(type='text')
+              td
+              td.text-center
+                label.switch.mt-3
+                  input(type='checkbox', checked)
+                  span.slider.round
+        
+      .modal-footer
+        button.btn.btn-lg.btn-secondary(type='button', data-dismiss='modal') 닫기
+        button.btn.btn-lg.btn-primary(type='button') 일괄수정
+
+
+
+//- Modal: 기간 일괄수정
+#exampleModal2.modal.fade(tabindex='-1', role='dialog')
+  .modal-dialog.modal-lg(role='document')
+    .modal-content
+      .modal-header
+        h5#exampleModalLabel.modal-title 
+          | 기간지정 일괄수정       
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+      .modal-body
+        .py-3
+        .form-group.row
+          label.col-md-2.col-form-label.text-right 기간
+          .col-md-10
+            .form-inline
+              .input-group.mr-3
+                input.form-control(type='date')
+                .input-group-addon 부터
+              .input-group
+                input.form-control(type='date')
+                .input-group-addon 까지
+        .form-group.row
+          label.col-md-2.col-form-label.text-right 요일선택
+          .col-md-8            
+            .day-check.d-flex.justify-content-between
+              .form-check
+                label.form-check-label
+                  input.form-check-input(type='checkbox', checked)
+                  | 전체
+              .form-check
+                label.form-check-label
+                  input.form-check-input(type='checkbox')
+                  | 월
+              .form-check
+                label.form-check-label
+                  input.form-check-input(type='checkbox')
+                  | 화
+              .form-check
+                label.form-check-label
+                  input.form-check-input(type='checkbox')
+                  | 수
+              .form-check
+                label.form-check-label
+                  input.form-check-input(type='checkbox')
+                  | 목
+              .form-check
+                label.form-check-label
+                  input.form-check-input(type='checkbox')
+                  | 금
+              .form-check
+                label.form-check-label.text-danger
+                  input.form-check-input(type='checkbox')
+                  | 토
+              .form-check
+                label.form-check-label.text-danger
+                  input.form-check-input(type='checkbox')
+                  | 일
+        .py-3
+            
+        table.table.table-vertical-middle
+          thead
+            tr
+              th 객실타입              
+              th(style='width: 15%') 재고수
+              th 입금가
+              th 판매가
+              th 판매마감/재개
+          tbody
+            tr
+              td SUPERIOR ROOM (더블)
+              td
+                input.form-control(type='number', min='0')
+              td
+                input.form-control(type='text', value='200,000')
+              td 220,000
+              td.text-center
+                label.switch.mt-3
+                  input(type='checkbox', checked)
+                  span.slider.round
+            tr
+              td SUPERIOR ROOM (트윈)
+              td
+                input.form-control(type='number', min='0')
+              td
+                input.form-control(type='text')
+              td
+              td.text-center
+                label.switch.mt-3
+                  input(type='checkbox', checked)
+                  span.slider.round
+            tr
+              td DELUXE ROOM (더블)
+              td
+                input.form-control(type='number', min='0')
+              td
+                input.form-control(type='text')
+              td
+              td.text-center
+                label.switch.mt-3
+                  input(type='checkbox', checked)
+                  span.slider.round
+            tr
+              td DELUXE ROOM (트윈)
+              td
+                input.form-control(type='number', min='0')
+              td
+                input.form-control(type='text')
+              td
+              td.text-center
+                label.switch.mt-3
+                  input(type='checkbox', checked)
+                  span.slider.round
+            tr
+              td JR.SUITE ROOM
+              td
+                input.form-control(type='number', min='0')
+              td
+                input.form-control(type='text')
+              td
               td.text-center
                 label.switch.mt-3
                   input(type='checkbox', checked)

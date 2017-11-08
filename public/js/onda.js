@@ -25,11 +25,11 @@ $(function () {
   });
 
   $('.chart-row.header .dd').click(function(){
-    var disabled = false;
-    disabled = $(this).hasClass('disabled');
-    if(disabled == false) {
+    // var disabled = false;
+    // disabled = $(this).hasClass('disabled');
+    // if(disabled == false) {
       $(this).toggleClass('selected');
-    }
+    // }
   });
 
 })
