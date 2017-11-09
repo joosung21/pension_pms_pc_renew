@@ -36,6 +36,10 @@ include ../../includes/topbar-hotel.pug
             .form-check
               label.form-check-label
                 input.form-check-input(type='checkbox')
+                | 전체객실
+            .form-check
+              label.form-check-label
+                input.form-check-input(type='checkbox')
                 | SUPERIOR ROOM (더블)
             .form-check
               label.form-check-label
@@ -66,13 +70,13 @@ include ../../includes/topbar-hotel.pug
                   input.form-control(type='number', min='1', value='1')
                   .input-group-addon 개
         .form-group.row
-          label.col-md-3.col-form-label 적용기간
+          label.col-md-3.col-form-label 판매기간
           .col-md-9
             .form-row
               .col-4
                 select.form-control
-                  option(selected) 상시적용
-                  option 입실일 기간적용
+                  option(selected) 상시판매
+                  option 판매기간 설정
               .col-4
                 .input-group
                   input.form-control(type='date')
@@ -87,11 +91,11 @@ include ../../includes/topbar-hotel.pug
             .d-flex
               .form-check.mr-4
                 label.form-check-label
-                  input.form-check-input(type='checkbox')
+                  input.form-check-input(type='radio', name='policyRadio', checked)
                   | 환불가능
               .form-check
                 label.form-check-label
-                  input.form-check-input(type='checkbox')
+                  input.form-check-input(type='radio', name='policyRadio')
                   | 환불불가
         
         .py-4
