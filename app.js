@@ -8,7 +8,7 @@ app.use('/', express.static('public'))
 app.use('/assets/', express.static('assets'))
 
 // 기본라우팅
-app.get('/', function (req, res){res.render('reservations')})
+app.get('/', function (req, res){res.render('hotel/reservations')})
 
 // 로그인
 app.get('/login', function (req, res){res.render('login')})

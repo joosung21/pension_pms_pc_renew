@@ -25,11 +25,7 @@ $(function () {
   });
 
   $('.chart-row.header .dd').click(function(){
-    // var disabled = false;
-    // disabled = $(this).hasClass('disabled');
-    // if(disabled == false) {
-      $(this).toggleClass('selected');
-    // }
+    $(this).toggleClass('selected');
   });
 
 })
@@ -48,8 +44,7 @@ function toggleView(target){
       $(".room-price").slideToggle();
       break;
     case "closing":      
-      if(closing == false) {
-        console.log('work');
+      if(closing == false) {        
         $(".chart-row.package").hide();
         $(".room-stock").hide();
         $(".room-price").hide();
@@ -58,6 +53,7 @@ function toggleView(target){
       } else {
         $(".closeout").hide();
         $(".room-stock").fadeIn();
+        $(".room-price").fadeIn();
         $(".chart-row.package").fadeIn();
         closing = false;
       }      
