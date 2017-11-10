@@ -1,0 +1,109 @@
+include ../../includes/header.pug
+include ../../includes/topbar-hotel.pug
+
+.row.no-gutters
+  include ../../includes/leftside-hotel.pug
+  
+  #content.col-md-8.col-lg-9.col-xl-10
+    .row.no-gutters
+      .col-md-12.col-xl-12
+        h1.mb-4 변경이력
+        .card      
+          .card-body
+            .form-row              
+              .col-md-6
+                .input-group
+                  input.form-control(type='date', value='2017-10-30')
+                  span.input-group-addon 부터
+                  input.form-control(type='date', value='2017-10-30')
+                  span.input-group-addon 까지
+              .col-md-6
+                .btn-group
+                  button.btn.btn-light(type='button') 어제
+                  button.btn.btn-primary(type='button') 오늘
+                  button.btn.btn-light(type='button') 최근한주
+                  button.btn.btn-light(type='button') 최근한달
+            .py-1
+            .form-row
+              .col-md-4
+                select.form-control
+                  option 전체객실
+                  option SUPERIOR ROOM (더블)
+                  option SUPERIOR ROOM (트윈)
+                  option DELUXE ROOM (더블)
+                  option DELUXE ROOM (트윈)
+                  option JR.SUITE ROOM
+              .col-md-4
+                select.form-control
+                  option 패키지선택...
+                  option Room Only
+                  option [11♥11데이] 와인제공PKG
+                  option ★티몬깜짝가 Room Only★
+                  option 2인조식 PKG
+                  option ★에버랜드 PKG★캐릭터 인형 증정
+                
+        .py-4
+
+        table.table.table-hover
+          thead
+            tr
+              th 일시
+              th 수정인
+              th 분류
+              th 객실
+              th 패키지        
+              th 수정데이타            
+          tbody
+            tr(data-toggle='modal', data-id='1', data-target='#exampleModal')
+              td 2017-11-24 20:39
+              td 김온다
+              td 요금/재고
+              td
+                .small SUPERIOR ROOM (더블)
+                .small SUPERIOR ROOM (트윈)
+                .small DELUXE ROOM (더블)
+                .small DELUXE ROOM (트윈)
+              td ★티몬깜짝가 Room Only★
+              td 16
+            tr(data-toggle='modal', data-id='1', data-target='#exampleModal')
+              td 2017-11-23 16:25
+              td 이수진
+              td 설정 - 호텔정보
+              td
+              td
+              td 2
+            tr(data-toggle='modal', data-id='1', data-target='#exampleModal')
+              td 2017-11-24 20:39
+              td 김온다
+              td 설정 - 패키지요금
+              td
+              td ★티몬깜짝가 Room Only★
+              td 2
+
+        //- Modal
+        #exampleModal.modal.fade(tabindex='-1', role='dialog')
+          .modal-dialog.modal-lg(role='document')
+            .modal-content
+              .modal-header
+                h5#exampleModalLabel.modal-title 
+                  | 변경내용                  
+                button.close(type='button', data-dismiss='modal', aria-label='Close')
+                  span(aria-hidden='true') ×
+              .modal-body
+
+                ul
+                  li 2017-11-10, SUPERIOR ROOM (더블), ★티몬깜짝가 Room Only★, 220,000원, 재고 1
+                  li 2017-11-10, SUPERIOR ROOM (트윈), ★티몬깜짝가 Room Only★, 240,000원
+                  li 2017-11-10, DELUXE ROOM (더블), ★티몬깜짝가 Room Only★, 240,000원, 재고 2
+                  li 2017-11-10, DELUXE ROOM (트윈) 판매마감
+                  li 2017-11-11, SUPERIOR ROOM (더블), ★티몬깜짝가 Room Only★, 220,000원, 재고 1
+                  li 2017-11-11, SUPERIOR ROOM (트윈), ★티몬깜짝가 Room Only★, 240,000원
+                  li 2017-11-11, DELUXE ROOM (더블), ★티몬깜짝가 Room Only★, 240,000원, 재고 2
+                  li 2017-11-11, DELUXE ROOM (트윈) 판매마감                  
+                  li 2017-11-12, SUPERIOR ROOM (더블), ★티몬깜짝가 Room Only★, 220,000원, 재고 1
+                  li 2017-11-12, SUPERIOR ROOM (트윈), ★티몬깜짝가 Room Only★, 240,000원
+                  li 2017-11-12, DELUXE ROOM (더블), ★티몬깜짝가 Room Only★, 240,000원, 재고 2
+                  li 2017-11-12, DELUXE ROOM (트윈) 판매마감
+                
+              .modal-footer                  
+                button.btn.btn-secondary(type='button', data-dismiss='modal') 닫기                
