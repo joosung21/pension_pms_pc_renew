@@ -2128,7 +2128,6 @@ include ../includes/topbar-hotel.pug
         .date 9/1
         .day 금
 
-
 //- Modal: 선택한 날짜 일괄수정
 #exampleModal.modal.fade(tabindex='-1', role='dialog')
   .modal-dialog.modal-lg(role='document')
@@ -2139,7 +2138,7 @@ include ../includes/topbar-hotel.pug
         button.close(type='button', data-dismiss='modal', aria-label='Close')
           span(aria-hidden='true') ×
       .modal-body
-        h3.text-center.my-5 8월 23(수), 8월 24(목), 8월 25(금)
+        h3.text-center.my-5 8월 23(수), 8월 24(목), 8월 25(금)        
         table.table.table-vertical-middle
           thead
             tr
@@ -2150,7 +2149,10 @@ include ../includes/topbar-hotel.pug
               th 판매마감/재개
           tbody
             tr
-              td SUPERIOR ROOM (더블)
+              td 
+                | SUPERIOR ROOM (더블)
+                div
+                  a.small(href='#') 패키지 보기                    
               td
                 input.form-control(type='number', min='0')
               td
@@ -2160,8 +2162,47 @@ include ../includes/topbar-hotel.pug
                 label.switch.mt-3
                   input(type='checkbox', checked)
                   span.slider.round
+            tr.bg-light
+              td
+                .small.pl-4 [11♥11데이] 와인제공PKG
+              td
+                input.form-control.form-control-sm(type='number', min='0')
+              td
+                input.form-control.form-control-sm(type='text', value='200,000')
+              td.small 220,000
+              td
+            tr.bg-light
+              td
+                .small.pl-4 ★티몬깜짝가 Room Only★
+              td
+                input.form-control.form-control-sm(type='number', min='0')
+              td
+                input.form-control.form-control-sm(type='text', value='200,000')
+              td.small 220,000
+              td
+            tr.bg-light
+              td
+                .small.pl-4 2인조식 PKG
+              td
+                input.form-control.form-control-sm(type='number', min='0')
+              td
+                input.form-control.form-control-sm(type='text', value='200,000')
+              td.small 220,000
+              td
+            tr.bg-light
+              td
+                .small.pl-4 ★에버랜드 PKG★캐릭터 인형 증정
+              td
+                input.form-control.form-control-sm(type='number', min='0')
+              td
+                input.form-control.form-control-sm(type='text', value='200,000')
+              td.small 220,000
+              td
             tr
-              td SUPERIOR ROOM (트윈)
+              td 
+                | SUPERIOR ROOM (트윈)
+                div
+                    a.small(href='#') 패키지 보기
               td
                 input.form-control(type='number', min='0')
               td
@@ -2172,7 +2213,10 @@ include ../includes/topbar-hotel.pug
                   input(type='checkbox', checked)
                   span.slider.round
             tr
-              td DELUXE ROOM (더블)
+              td 
+                | DELUXE ROOM (더블)
+                div
+                    a.small(href='#') 패키지 보기
               td
                 input.form-control(type='number', min='0')
               td
@@ -2183,7 +2227,10 @@ include ../includes/topbar-hotel.pug
                   input(type='checkbox', checked)
                   span.slider.round
             tr
-              td DELUXE ROOM (트윈)
+              td 
+                | DELUXE ROOM (트윈)
+                div
+                    a.small(href='#') 패키지 보기
               td
                 input.form-control(type='number', min='0')
               td
@@ -2194,7 +2241,10 @@ include ../includes/topbar-hotel.pug
                   input(type='checkbox', checked)
                   span.slider.round
             tr
-              td JR.SUITE ROOM
+              td
+                | JR.SUITE ROOM
+                div
+                    a.small(href='#') 패키지 보기
               td
                 input.form-control(type='number', min='0')
               td
