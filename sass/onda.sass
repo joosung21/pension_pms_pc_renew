@@ -17,7 +17,7 @@ body
   -khtml-user-select: none
   -moz-user-select: none
   -ms-user-select: none
-  user-select: none                             
+  user-select: none
 
 .vertical-middle
   *
@@ -406,14 +406,13 @@ table.price-table
         .date.today
           border-color: white !important
         &:hover
-          background-color: darken($blue, 5%) !important
+          background-color: darken($blue, 5%) !important      
       input.form-control
         padding-right: 0
         padding-left: 0
-        font-size: 14pt        
+        font-size: 14pt
         &.dirty
-          background-color: lighten($yellow, 10%)
-          border-color: darken($yellow, 12%)
+          background-color: lighten($yellow, 10%)          
       &.holiday
         .date, .day
           color: $red
@@ -428,12 +427,21 @@ table.price-table
           padding-left: 7px          
         input.form-control
           font-size: 12pt
+        &.dirty
+          .input-group-addon, input.form-control
+            background-color: lighten($yellow, 10%)
+        &.zero
+          .input-group-addon, input.form-control
+              background-color: lighten($gray, 10%)
       .room-price
         input.form-control
-          border-color: white
+          border-color: white          
         &:hover
           input.form-control
             border-color: #dddfe1
+        &.dirty
+          input.form-control
+            background-color: lighten($yellow, 10%)
       .closeout
         display: none
 
