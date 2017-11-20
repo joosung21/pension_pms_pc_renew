@@ -66,7 +66,8 @@ app.get('/hotel/setting/history', function (req, res){res.render('hotel/setting/
 
 
 // Temporary ONDA website draft
-app.get('/onda', function (req, res){res.render('onda')})
+app.get('/onda1', function (req, res){res.render('onda1')})
+app.get('/onda2', function (req, res){res.render('onda2')})
 
 
 app.listen(3000, function () {
