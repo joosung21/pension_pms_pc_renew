@@ -60,16 +60,6 @@ app.get('/hotel/setting/package/create', function (req, res){res.render('hotel/s
 app.get('/hotel/setting/policy', function (req, res){res.render('hotel/setting/policy')})
 app.get('/hotel/setting/history', function (req, res){res.render('hotel/setting/history')})
 
-
-
-
-
-
-// Temporary ONDA website draft
-app.get('/onda1', function (req, res){res.render('onda1')})
-app.get('/onda2', function (req, res){res.render('onda2')})
-
-
 app.listen(3000, function () {
   console.log('App listening on port 3000!')
 })
